@@ -19,11 +19,11 @@ public class JavaStreams {
         names.add("Alexa");
         names.add("Rama");
         names.add("Adam");
-        int count = 0;
-        for (int i = 0; i < names.size(); i++) {
-            String name = names.get(i);
-            if (name.startsWith("A")) {
-                count++;
+//        int count = 0;
+//        for (int i = 0; i < names.size(); i++) {
+//            String name = names.get(i);
+//            if (name.startsWith("A")) {
+//                count++;
             }
         }
 //        System.out.println(count);
@@ -58,8 +58,6 @@ public class JavaStreams {
 //        System.out.println(ls);
 //        System.out.println("NA");
 //        System.out.println("NA");
-    }
-}
 
 
 
