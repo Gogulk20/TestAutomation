@@ -50,7 +50,7 @@ public class JavaStreams {
         //Greater than 4 letters and Print first name
 //        names.stream().filter(g->g.length()>4).limit(1).forEach(g->System.out.println(g));
 //        The Letters Ends with "a" and it should display in Upper case
-        names.stream().filter(g->g.endsWith("a")).sorted().map(g->g.toUpperCase()).forEach(g->System.out.println(g));
+  //      names.stream().filter(g->g.endsWith("a")).sorted().map(g->g.toUpperCase()).forEach(g->System.out.println(g));
         //Combain the Two Array of strings in the single variable
 //        Stream<String>
         //Get the First Elements of the List
