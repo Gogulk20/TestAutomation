@@ -28,14 +28,14 @@ int count = 0;
         }
         System.out.println(count);
     }
-    static void FirstLetter(){
-        List<String> names = new ArrayList<>();
-        names.add("Aravind");
-        names.add("Deebhan");
-        names.add("Rama");
-        names.add("Alexa");
-        names.add("Adam");
-List<String> name1 = Arrays.asList("David", "Arun", "Site");
+//    static void FirstLetter(){
+//        List<String> names = new ArrayList<>();
+//        names.add("Aravind");
+//        names.add("Deebhan");
+//        names.add("Rama");
+//        names.add("Alexa");
+//        names.add("Adam");
+//List<String> name1 = Arrays.asList("David", "Arun", "Site");
 //        Long c =names.stream().filter(s->s.startsWith("A")).count();
 //        System.out.println(c);
         // Count of the List
@@ -61,4 +61,4 @@ List<String> name1 = Arrays.asList("David", "Arun", "Site");
     }
 
 
-    }
+
