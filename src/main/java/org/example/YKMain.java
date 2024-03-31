@@ -11,5 +11,7 @@ public class YKMain {
 //        Actions.ActionsTest();
       JavaStreams.NormalFirsLetter();
 //      JavaStreams.FirstLetter();
+        System.out.println("NA");
+        System.out.println("NA");
     }
 }
