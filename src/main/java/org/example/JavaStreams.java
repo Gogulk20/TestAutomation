@@ -56,6 +56,7 @@ List<String> name1 = Arrays.asList("David", "Arun", "Site");
         //Get the First Elements of the List
         List<String> ls= Stream.of("Aravind", "Deebhan", "Alexa", "Adam", "Rama").filter(g->g.startsWith("A")).map(g->g.toUpperCase()).collect(Collectors.toList());
         System.out.println(ls);
+        System.out.println("NA");
     }
 
 
