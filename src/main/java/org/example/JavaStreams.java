@@ -25,6 +25,8 @@ public class JavaStreams {
 //            if (name.startsWith("A")) {
 //                count++;
         System.out.println("NA");
+        System.out.println("NA");
+        System.out.println("NA");
             }
         }
 //        System.out.println(count);
