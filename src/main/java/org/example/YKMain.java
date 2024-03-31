@@ -10,6 +10,6 @@ public class YKMain {
     public static void main(String[] args) {
 //        Actions.ActionsTest();
       JavaStreams.NormalFirsLetter();
-      JavaStreams.FirstLetter();
+//      JavaStreams.FirstLetter();
     }
 }
