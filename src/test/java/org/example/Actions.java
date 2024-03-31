@@ -9,6 +9,7 @@ import java.io.IOException;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.time.Duration;
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
@@ -148,6 +149,10 @@ public class Actions {
         a.assertAll();
 
 
+    }
+
+    static void BrokenLink1 (WebDriver actiondriver) throws IOException{
+        List <String> name = new ArrayList<String>();
     }
 
 }
