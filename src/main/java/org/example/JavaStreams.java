@@ -26,7 +26,7 @@ public class JavaStreams {
                 count++;
             }
         }
-        System.out.println(count);
+//        System.out.println(count);
 
 //    static void FirstLetter(){
 //        List<String> names = new ArrayList<>();
