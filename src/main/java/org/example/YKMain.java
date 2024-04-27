@@ -5,13 +5,13 @@ package org.example;
 
 import org.openqa.selenium.interactions.Actions;
 
+
 public class YKMain {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
 //        Actions.ActionsTest();
-      JavaStreams.NormalFirsLetter();
+      //JavaStreams.NormalFirsLetter();
 //      JavaStreams.FirstLetter();
-        System.out.println("NA");
-        System.out.println("NA");
+        Data.CatalogPR();
     }
 }

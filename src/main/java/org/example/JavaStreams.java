@@ -13,22 +13,22 @@ import static org.junit.Assert.assertTrue;
 public class JavaStreams {
 
     static void NormalFirsLetter() {
-        List<String> names = new ArrayList<String>();
-        names.add("Aravind");
-        names.add("Deebhan");
-        names.add("Alexa");
-        names.add("Rama");
-        names.add("Adam");
+//        List<String> names = new ArrayList<String>();
+//        names.add("Aravind");
+//        names.add("Deebhan");
+//        names.add("Alexa");
+//        names.add("Rama");
+//        names.add("Adam");
 //        int count = 0;
 //        for (int i = 0; i < names.size(); i++) {
 //            String name = names.get(i);
 //            if (name.startsWith("A")) {
 //                count++;
-        System.out.println("NA");
-        System.out.println("NA");
-        System.out.println("NA");
-            }
-        }
+//            }
+//        }
+//        for (int i = 10; i >= 1; i--) {
+//            System.out.println(i);
+//        }
 //        System.out.println(count);
 
 //    static void FirstLetter(){
@@ -53,7 +53,7 @@ public class JavaStreams {
         //Greater than 4 letters and Print first name
 //        names.stream().filter(g->g.length()>4).limit(1).forEach(g->System.out.println(g));
 //        The Letters Ends with "a" and it should display in Upper case
-  //      names.stream().filter(g->g.endsWith("a")).sorted().map(g->g.toUpperCase()).forEach(g->System.out.println(g));
+        //      names.stream().filter(g->g.endsWith("a")).sorted().map(g->g.toUpperCase()).forEach(g->System.out.println(g));
         //Combain the Two Array of strings in the single variable
 //        Stream<String>
         //Get the First Elements of the List
@@ -62,5 +62,5 @@ public class JavaStreams {
 //        System.out.println("NA");
 //        System.out.println("NA");
 
-
+    }}
 
