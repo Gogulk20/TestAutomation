@@ -108,11 +108,6 @@ public class CatalogPR {
     }
     public static void CatalogCreaete(WebDriver page) throws InterruptedException {
         page.findElement(By.id("btnCreate")).click();Thread.sleep(1000);
-        page.findElement(By.xpath("//button[contains(text(),'Yes')]")).click();Thread.sleep(1000);
-    }
-    public static void Approval(WebDriver page) throws InterruptedException {
-        page.findElement(By.id("btnSendApproval")).click();
-        page.findElement(By.xpath("//button[contains(text(),'Yes')]")).click();
-        Thread.sleep(1000);
+        page.findElement(By.xpath("//button[contains(text(),'Yes')]")).click();Thread.sleep(2000);
     }
 }
