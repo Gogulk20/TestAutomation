@@ -91,8 +91,8 @@ public class CatalogPR {
         page.findElement(By.id("quantity")).sendKeys("200");Thread.sleep(1000);
         page.findElement(By.id("saveRequisitionItem")).click();Thread.sleep(1000);
     }
-    public static void CatalogNotes(String Notes, WebDriver page) throws InterruptedException {
-        page.findElement(By.id("notes")).sendKeys(Notes);Thread.sleep(1000);
+    public static void CatalogNotes(String PRNotes, WebDriver page) throws InterruptedException {
+        page.findElement(By.id("notes")).sendKeys(PRNotes);Thread.sleep(1000);
     }
     public static void CatalogAttachments(String File1, String File2, WebDriver page) throws InterruptedException {
         page.findElement(By.id("attachDocs")).click();Thread.sleep(1000);

@@ -26,10 +26,11 @@ public class Data {
                 String Pm = "projectmanager@cormsquare.com";
                 String OI = "9999";
                 String ItemsCat = "cable";
-                String Notes = "PR Notes";
+                String PRNotes = "PR Notes";
                 String File1 = "C:\\Users\\Vidya Abbigeri\\Downloads\\ExportItems (2).xlsx";
                 String File2 = "C:\\Users\\Vidya Abbigeri\\Downloads\\ImportRequisitionItems.xlsx";
                 String BuyerId = "buyer@cormsquare.com";
+                String PORNotes = "POR Notes";
                 LogIn.RequesterId(ReqId, Pass, page);
                 CatalogPR.CatalogCreateButton(page);
                 CatalogPR.CatalogTitle(Title, page);
@@ -45,14 +46,14 @@ public class Data {
                 CatalogPR.CatalogProjectManager(Pm, page);
                 CatalogPR.CatalogOrderIntake(OI, page);
                 CatalogPR.CatalogItems(ItemsCat, page);
-                CatalogPR.CatalogNotes(Notes, page);
+                CatalogPR.CatalogNotes(PRNotes, page);
                 CatalogPR.CatalogAttachments(File1, File2, page);
                 CatalogPR.CatalogCreaete(page);
 //            CatalogPR.SendForApproval(page);
                 SendForApproval.Approval(page);
                 CatalogBuyerManagerAssign.BMAssign(Pass, page);
                 CatalogAssignBuyer.BuyerAssign(BuyerId,Title,page);
-                CatalogPOR.CreatePOR(BuyerId, Pass, Title, page);
+                CatalogPOR.CreatePOR(BuyerId, Pass, Title, PORNotes, page);
         }
 
 }
