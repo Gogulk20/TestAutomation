@@ -16,11 +16,14 @@ public class CatalogPOR {
         page.findElement(By.id("btnCreatePOR")).click();Thread.sleep(1000);
         JavascriptExecutor js = (JavascriptExecutor) page;
         js.executeScript("window.scrollBy(0, 1750)");Thread.sleep(1000);
+        //Tax Code dropdown
         page.findElement(By.id("select2-taxCodeId-container")).click();Thread.sleep(1000);
         page.findElement(By.cssSelector(".select2-results__option")).click();Thread.sleep(1000);
         JavascriptExecutor js1 = (JavascriptExecutor) page;
         js1.executeScript("window.scrollBy(0, 700)");Thread.sleep(1000);
+        //POR Notes
         page.findElement(By.id("notes")).sendKeys(PORNotes);
+        //POR Create
         page.findElement(By.id("btnCreate")).click();Thread.sleep(1000);
         page.findElement(By.xpath("//button[contains(text(), 'Yes')]")).click();Thread.sleep(2000);
     }
