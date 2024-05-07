@@ -4,7 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 
-public class CatalogBuyerManagerAssign {
+public class CatalogBuyerManagerLogin {
 
     public static void BMAssign(String Pass, WebDriver page) throws InterruptedException {
         JavascriptExecutor js = (JavascriptExecutor) page;

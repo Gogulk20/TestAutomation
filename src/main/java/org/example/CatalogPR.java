@@ -8,6 +8,8 @@ import org.openqa.selenium.WebElement;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.Date;
+import java.util.List;
+
 public class CatalogPR {
 
     public static void CatalogCreateButton(WebDriver page) throws InterruptedException {
@@ -77,9 +79,9 @@ public class CatalogPR {
         page.findElement(By.id("orderInTakeId")).sendKeys(OI);Thread.sleep(1000);
 //        page.findElement(By.id("orderInTakeId")).sendKeys(OI);Thread.sleep(1000);
         JavascriptExecutor js = (JavascriptExecutor) page;
-        js.executeScript("window.scrollBy(0, 500)", "");
+        js.executeScript("window.scrollBy(0, 600)");
     }
-    public static void CatalogItems(String ItemsCat, WebDriver page) throws InterruptedException {
+    public static void CatalogItems(String ItemsQty, WebDriver page) throws InterruptedException {
         //Items Category
         page.findElement(By.id("addLineRequisitionItems")).click();Thread.sleep(1000);
         page.findElement(By.id("select2-categoryId-container")).click();Thread.sleep(1000);
@@ -88,7 +90,7 @@ public class CatalogPR {
         page.findElement(By.id("select2-itemId-container")).click();Thread.sleep(1000);
         page.findElement(By.cssSelector(".select2-results__option")).click();Thread.sleep(1000);
         //Quantity
-        page.findElement(By.id("quantity")).sendKeys("200");Thread.sleep(1000);
+        page.findElement(By.id("quantity")).sendKeys(ItemsQty);Thread.sleep(1000);
         page.findElement(By.id("saveRequisitionItem")).click();Thread.sleep(1000);
     }
     public static void CatalogNotes(String PRNotes, WebDriver page) throws InterruptedException {
@@ -98,16 +100,16 @@ public class CatalogPR {
         page.findElement(By.id("attachDocs")).click();Thread.sleep(1000);
         WebElement file = (page.findElement(By.id("formFilePreupload")));
         file.sendKeys(File1);Thread.sleep(1000);
-        page.findElement(By.id("saveAttachments1")).click();
-        WebElement file2 = (page.findElement(By.id("formFilePreupload")));
+        page.findElement(By.id("saveAttachments1")).click();Thread.sleep(1000);
+        WebElement file2 = (page.findElement(By.id("formFilePreupload")));Thread.sleep(1000);
         file2.sendKeys(File2);Thread.sleep(1000);
-        page.findElement(By.id("saveAttachments1")).click();
-        page.findElement(By.id("submitAttachmentsId")).click();
+        page.findElement(By.id("saveAttachments1")).click();Thread.sleep(1000);
+        page.findElement(By.id("submitAttachmentsId")).click();Thread.sleep(1000);
         JavascriptExecutor js = (JavascriptExecutor) page;
-        js.executeScript("window.scrollBy(0, 500)", "");
+        js.executeScript("window.scrollBy(0, 600)");
     }
     public static void CatalogCreaete(WebDriver page) throws InterruptedException {
         page.findElement(By.id("btnCreate")).click();Thread.sleep(1000);
-        page.findElement(By.xpath("//button[contains(text(),'Yes')]")).click();Thread.sleep(2000);
+        page.findElement(By.xpath("//button[contains(text(),'Yes')]")).click();Thread.sleep(3000);
     }
 }

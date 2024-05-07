@@ -25,6 +25,6 @@ public class CatalogPOR {
         page.findElement(By.id("notes")).sendKeys(PORNotes);
         //POR Create
         page.findElement(By.id("btnCreate")).click();Thread.sleep(1000);
-        page.findElement(By.xpath("//button[contains(text(), 'Yes')]")).click();Thread.sleep(2000);
+        page.findElement(By.xpath("//button[contains(text(), 'Yes')]")).click();Thread.sleep(3000);
     }
 }
