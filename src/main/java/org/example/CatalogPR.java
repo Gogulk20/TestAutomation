@@ -43,8 +43,8 @@ public class CatalogPR {
         page.findElement(By.cssSelector(".select2-results__option")).click();Thread.sleep(1000);
     }
     public static void CatalogShippingAdds(String Address, WebDriver page) throws InterruptedException {
-        page.findElement(By.id("select2-endusersId-container")).click();Thread.sleep(1000);
-        page.findElement(By.cssSelector("input[class='select2-search__field']")).sendKeys(Address);Thread.sleep(1000);
+        page.findElement(By.id("select2-shippingaddressId-container")).click();Thread.sleep(1000);
+//        page.findElement(By.cssSelector("input[class='select2-search__field']")).sendKeys(Address);Thread.sleep(1000);
         page.findElement(By.cssSelector(".select2-results__option")).click();Thread.sleep(1000);
     }
     public static void CatalogShippingMode(String Mode, WebDriver page) throws InterruptedException {

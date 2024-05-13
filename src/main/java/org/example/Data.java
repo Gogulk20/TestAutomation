@@ -1,5 +1,6 @@
 package org.example;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -7,10 +8,13 @@ import org.openqa.selenium.chrome.ChromeOptions;
 public class Data {
 
         public static void CatalogPR() throws InterruptedException {
-                ChromeOptions options = new ChromeOptions();
-                System.setProperty("webdriver.chrome.driver", "C:\\Chrome Driver\\chromedriver-win64 (1)\\chromedriver-win64\\chromedriver.exe");
-                options.addArguments("--remote-allow-origins=*");
-                WebDriver page = new ChromeDriver(options);
+
+//                ChromeOptions options = new ChromeOptions();
+//                System.setProperty("webdriver.chrome.driver", "C:\\Chrome Driver\\chromedriver-win64 (1)\\chromedriver-win64\\chromedriver.exe");
+//                options.addArguments("--remote-allow-origins=*");
+//                WebDriver page = new ChromeDriver(options);
+                WebDriverManager.chromedriver().setup();
+                WebDriver page = new ChromeDriver();
                 page.get("https://yea-test.cormsquare.com/Identity/Account/Login");
                 page.manage().window().maximize();
                 String Title = "GHB Company PVT LMT";
@@ -26,7 +30,7 @@ public class Data {
                 String Pm = "projectmanager@cormsquare.com";
                 String OI = "9999";
                 String ItemsCat = "cable";
-                String ItemsQty = "90";
+                String ItemsQty = "900000";
                 String PRNotes = "PR Notes";
                 String File1 = "C:\\Users\\Vidya Abbigeri\\Downloads\\ExportItems (2).xlsx";
                 String File2 = "C:\\Users\\Vidya Abbigeri\\Downloads\\ImportRequisitionItems.xlsx";
@@ -36,7 +40,7 @@ public class Data {
                 String PreOrDict = "hazel@sharklasers.com";
                 String PRGroupB = "projectmanager3@cormsquare.com";
                 String PRGroupC = "departmentmanager@cormsquare.com";
-                String PRGroupD = "projectmanager@cormsquare.com";
+                String PRGroupD = "businessunitmanager3@cormsquare.com";
                 LogIn.RequesterId(ReqId, Pass, page);
                 CatalogPR.CatalogCreateButton(page);
                 CatalogPR.CatalogTitle(Title, page);
@@ -61,6 +65,6 @@ public class Data {
                 CatalogAssignBuyer.BuyerAssign(BuyerId,Title,page);
                 CatalogPOR.CreatePOR(BuyerId, Pass, Title, PORNotes, page);
                 PORSendForApproval.SendForApproval(PreOrDict,Pass, page);
-                PORApprovalAssign.PORApproval(Title, PRGroupB, PRGroupC, PRGroupD, page);
+                PMApprovalAssign.PORApproval(Title, PRGroupB, PRGroupC, PRGroupD, Pass, page);
         }
 }
