@@ -12,7 +12,7 @@ public class CatalogPOR {
         page.findElement(By.id("Input_Email")).sendKeys(BuyerId);Thread.sleep(1000);
         page.findElement(By.id("Input_Password")).sendKeys(Pass);Thread.sleep(1000);
         page.findElement(By.id("login-submit")).click();Thread.sleep(1000);
-        page.findElement(By.xpath("//span[contains(text(), '"+Title+"')]")).click();Thread.sleep(2000);
+        page.findElement(By.xpath("//span[contains(text(), '"+Title+"')]")).click();Thread.sleep(3000);
         page.findElement(By.id("btnCreatePOR")).click();Thread.sleep(1000);
         JavascriptExecutor js = (JavascriptExecutor) page;
         js.executeScript("window.scrollBy(0, 1750)");Thread.sleep(1000);
@@ -24,7 +24,7 @@ public class CatalogPOR {
         //POR Notes
         page.findElement(By.id("notes")).sendKeys(PORNotes);
         //POR Create
-        page.findElement(By.id("btnCreate")).click();Thread.sleep(1000);
+        page.findElement(By.id("btnCreate")).click();Thread.sleep(2000);
         page.findElement(By.xpath("//button[contains(text(), 'Yes')]")).click();Thread.sleep(3000);
     }
 }
