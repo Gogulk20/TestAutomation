@@ -99,10 +99,10 @@ public class CatalogPR {
     public static void CatalogAttachments(String File1, String File2, WebDriver page) throws InterruptedException {
         page.findElement(By.id("attachDocs")).click();Thread.sleep(1000);
         WebElement file = (page.findElement(By.id("formFilePreupload")));
-        file.sendKeys(File1);Thread.sleep(1000);
+        file.sendKeys(File1);Thread.sleep(2000);
         page.findElement(By.id("saveAttachments1")).click();Thread.sleep(1000);
         WebElement file2 = (page.findElement(By.id("formFilePreupload")));Thread.sleep(1000);
-        file2.sendKeys(File2);Thread.sleep(1000);
+        file2.sendKeys(File2);Thread.sleep(2000);
         page.findElement(By.id("saveAttachments1")).click();Thread.sleep(1000);
         page.findElement(By.id("submitAttachmentsId")).click();Thread.sleep(1000);
         JavascriptExecutor js = (JavascriptExecutor) page;
@@ -110,6 +110,6 @@ public class CatalogPR {
     }
     public static void CatalogCreaete(WebDriver page) throws InterruptedException {
         page.findElement(By.id("btnCreate")).click();Thread.sleep(1000);
-        page.findElement(By.xpath("//button[contains(text(),'Yes')]")).click();Thread.sleep(3000);
+        page.findElement(By.xpath("//button[contains(text(),'Yes')]")).click();Thread.sleep(4000);
     }
 }
