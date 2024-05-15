@@ -30,7 +30,7 @@ public class Data {
                 String Pm = "projectmanager@cormsquare.com";
                 String OI = "9999";
                 String ItemsCat = "cable";
-                String ItemsQty = "900000";
+                String ItemsQty = "9";
                 String PRNotes = "PR Notes";
                 String File1 = "C:\\Users\\Vidya Abbigeri\\Downloads\\ExportItems (2).xlsx";
                 String File2 = "C:\\Users\\Vidya Abbigeri\\Downloads\\ImportRequisitionItems.xlsx";
