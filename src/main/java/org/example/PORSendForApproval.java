@@ -7,6 +7,11 @@ public class PORSendForApproval {
         try {
             ApprovalPopup = page.findElement(By.xpath("//main[1]/div[1]/div[4]/div[1]/div[1]"));
             if (ApprovalPopup.isEnabled()) {
+//            WebElement ChiefFO = page.findElement(By.xpath("//label[contains(text(),'Chief Financial Officer')]"));
+//        if (ChiefFO.isDisplayed()){
+//            page.findElement(By.id("role-7")).click();
+//            page.findElement(By.xpath(".select2-results__option--highlighted")).click();
+//        }
                 WebElement ChiefPresidentOrDirector = page.findElement(By.xpath("//label[contains(text(),'President / Director (Corporate)')]"));
                 if (ChiefPresidentOrDirector.isDisplayed()) {
                     page.findElement(By.id("select2-role-8-container")).click();Thread.sleep(1000);
