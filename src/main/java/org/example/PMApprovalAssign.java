@@ -14,7 +14,6 @@ public class PMApprovalAssign {
     public static void PORApproval(String Title, String PRGroupB, String PRGroupC, String PRGroupD, String Pass, WebDriver page) throws InterruptedException {
         page.findElement(By.xpath("//span[contains(text(), 'My Approvals')]")).click();Thread.sleep(2000);
         page.findElement(By.xpath("//span[contains(text(),'"+Title+"')]")).click();Thread.sleep(2000);
-
         page.findElement(By.xpath("//button[contains(text(),'Add Approvers')]")).click();Thread.sleep(3000);
         WebElement GroupApproverPopup = page.findElement(By.cssSelector(".modal-content"));
         if (GroupApproverPopup.isEnabled()) {
@@ -36,6 +35,7 @@ public class PMApprovalAssign {
                 page.findElement(By.id("select2-divisionManagerId-container")).click();Thread.sleep(1000);
                 page.findElement(By.cssSelector(".select2-search__field")).sendKeys(PRGroupD);Thread.sleep(1000);
                 page.findElement(By.cssSelector(".select2-results__option")).click();Thread.sleep(1000);
+                page.findElement(By.id("btnSendUserFromPM")).click();Thread.sleep(2000);
             }
             JavascriptExecutor js = (JavascriptExecutor) page;
             js.executeScript("window.scrollBy(0, 3100)");Thread.sleep(1000);
