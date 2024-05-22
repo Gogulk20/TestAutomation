@@ -58,6 +58,7 @@ public class PMApprovalAssign {
                 js3.executeScript("window.scrollBy(0, 3050)");Thread.sleep(1000);
                 page.findElement(By.id("btnApprove")).click();Thread.sleep(1000);
                 page.findElement(By.cssSelector(".bootbox-accept")).click();Thread.sleep(1000);
+                LogOut.UserLogOut(page);Thread.sleep(1000);
             }
         }
         else if (!GroupApproverPopup.isEnabled()) {
@@ -83,6 +84,7 @@ public class PMApprovalAssign {
                 js2.executeScript("window.scrollBy(0, 3000)");Thread.sleep(1000);
                 page.findElement(By.id("btnApprove")).click();Thread.sleep(1000);
                 page.findElement(By.cssSelector(".bootbox-accept")).click();Thread.sleep(1000);
+                LogOut.UserLogOut(page);Thread.sleep(1000);
             }
         }
     }
