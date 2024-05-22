@@ -3,10 +3,8 @@ package org.example;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
 
-public class Data {
-
+public class Data{
         public static void CatalogPR() throws InterruptedException {
 
 //                ChromeOptions options = new ChromeOptions();
@@ -35,6 +33,7 @@ public class Data {
                 String File1 = "C:\\Users\\Vidya Abbigeri\\Downloads\\ExportItems (2).xlsx";
                 String File2 = "C:\\Users\\Vidya Abbigeri\\Downloads\\ImportRequisitionItems.xlsx";
                 String BuyerId = "buyer@cormsquare.com";
+                String AdminId = "admin@cormsquare.com";
                 String PORNotes = "POR Notes";
                 String CFO = "cfo@cormsquare.com";
                 String PreOrDict = "hazel@sharklasers.com";
@@ -66,5 +65,6 @@ public class Data {
                 CatalogPOR.CreatePOR(BuyerId, Pass, Title, PORNotes, page);
                 PORSendForApproval.SendForApproval(PreOrDict,Pass, page);
                 PMApprovalAssign.PORApproval(Title, PRGroupB, PRGroupC, PRGroupD, Pass, page);
+                POCreate.BuyerCreatePO(AdminId,Pass,Title,page);
         }
 }
