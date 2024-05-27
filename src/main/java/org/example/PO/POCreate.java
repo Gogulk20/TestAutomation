@@ -1,6 +1,7 @@
-package org.example;
+package org.example.PO;
 
 
+import org.example.LogOut.LogOut;
 import org.openqa.selenium.*;
 
 public class POCreate {
