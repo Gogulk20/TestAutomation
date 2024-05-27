@@ -71,6 +71,9 @@ public class CatalogPR {
     public static void CatalogOrderIntake(String OI, WebDriver page) throws InterruptedException {
         page.findElement(By.id("orderInTakeId")).sendKeys(OI);Thread.sleep(1000);
 //        page.findElement(By.id("orderInTakeId")).sendKeys(OI);Thread.sleep(1000);
+    }
+    public static void CatalogInspection(WebDriver page) throws InterruptedException {
+        page.findElement(By.id("inspectRequired")).click();Thread.sleep(1000);
         JavascriptExecutor js = (JavascriptExecutor) page;
         js.executeScript("window.scrollBy(0, 600)");
     }

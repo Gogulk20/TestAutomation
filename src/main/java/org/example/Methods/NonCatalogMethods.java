@@ -29,6 +29,7 @@ public class NonCatalogMethods {
         NonCatalogPR.NonCatalogProjectManager(Pm, page);
         NonCatalogPR.NonCatalogOrderIntake(OI, page);
         NonCatalogPR.NonCatalogTargetPrice(TP,page);
+        NonCatalogPR.NonCatalogInspection(page);
         NonCatalogPR.NonCatalogWarranty(page);
         NonCatalogPR.NonCatalogPriceValidity(page);
         NonCatalogPR.NonCatalogItems(ItemsQty, page);
@@ -50,7 +51,7 @@ public class NonCatalogMethods {
         technicalEvaluation.RequesterCreateTE(ReqId,Pass,Title,page);
         CommercialEvaluation commercialEvaluation = new CommercialEvaluation(page);
         commercialEvaluation.BuyerCreateCE(BuyerId, Pass, Title,PORNotes,PreOrDict,PRGroupB,PRGroupC,PRGroupD,AdminId,page);
-//        POSent.POSentToVendor(BuyerId,Pass,Title,page);
+//        return vendorInvite;
         return vendorInvite;
     }
 }

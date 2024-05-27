@@ -28,6 +28,7 @@ public class CatalogMethods extends YKMain{
                 CatalogPR.CatalogBuyerManager(Bm, page);
                 CatalogPR.CatalogProjectManager(Pm, page);
                 CatalogPR.CatalogOrderIntake(OI, page);
+                CatalogPR.CatalogInspection(page);
                 CatalogPR.CatalogItems(ItemsQty, page);
                 CatalogPR.CatalogNotes(PRNotes, page);
                 CatalogPR.CatalogAttachments(File1, File2, page);
