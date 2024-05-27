@@ -1,22 +1,15 @@
-package org.example;
+package org.example.PR.Modules;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
-import java.util.Date;
-import java.util.List;
-
 public class CatalogPR {
 
     public static void CatalogCreateButton(WebDriver page) throws InterruptedException {
-        page.findElement(By.cssSelector(".btn-primary")).click();
-        Thread.sleep(1000);
-        page.findElement(By.xpath("//div/table/tbody/tr[1]/td[1]/a[1]")).click();
-        Thread.sleep(1000);
+        page.findElement(By.cssSelector(".btn-primary")).click();Thread.sleep(1000);
+        page.findElement(By.xpath("//div/table/tbody/tr[1]/td[1]/a[1]")).click();Thread.sleep(1000);
     }
     public static void CatalogTitle(String Title, WebDriver page) throws InterruptedException {
         page.findElement(By.id("title")).sendKeys(Title);Thread.sleep(1000);
