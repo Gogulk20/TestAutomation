@@ -27,9 +27,9 @@ public class NonCatalogMethods {
         NonCatalogPR.NonCatalogExpectedDelivery(page);
         NonCatalogPR.NonCatalogBuyerManager(Bm, page);
         NonCatalogPR.NonCatalogProjectManager(Pm, page);
+        NonCatalogPR.NonCatalogInspection(page);
         NonCatalogPR.NonCatalogOrderIntake(OI, page);
         NonCatalogPR.NonCatalogTargetPrice(TP,page);
-        NonCatalogPR.NonCatalogInspection(page);
         NonCatalogPR.NonCatalogWarranty(page);
         NonCatalogPR.NonCatalogPriceValidity(page);
         NonCatalogPR.NonCatalogItems(ItemsQty, page);
@@ -37,7 +37,6 @@ public class NonCatalogMethods {
         NonCatalogPR.NonCatalogAttachments(File1, File2, page);
         NonCatalogPR.NonCatalogCreaete(page);
         PRSendForApproval.Approval(page);
-//        PRBuyerManagerLogin.BMAssign(Pass, page);
         PRAssignBuyer.BuyerAssign(Bm,Pass,BuyerId,Title,page);
         CreateRFQ createRFQ = new CreateRFQ(page);
         createRFQ.CreateRFQ(BuyerId, Pass, Title, RFQNotes, page);
@@ -50,8 +49,7 @@ public class NonCatalogMethods {
         TechnicalEvaluation technicalEvaluation = new TechnicalEvaluation(page);
         technicalEvaluation.RequesterCreateTE(ReqId,Pass,Title,page);
         CommercialEvaluation commercialEvaluation = new CommercialEvaluation(page);
-        commercialEvaluation.BuyerCreateCE(BuyerId, Pass, Title,PORNotes,PreOrDict,PRGroupB,PRGroupC,PRGroupD,AdminId,page);
-//        return vendorInvite;
+        commercialEvaluation.BuyerCreateCE(BuyerId, Pass, Title,PORNotes,PreOrDict,PRGroupB,PRGroupC,PRGroupD,AdminId,VendorId,ReqId,page);
         return vendorInvite;
     }
 }

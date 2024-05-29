@@ -48,15 +48,15 @@ public class CatalogPR {
         js.executeScript("window.scrollBy(0, 100)", "");
     }
     public static void CatalogExpectedPOIssue(WebDriver page) throws InterruptedException {
+        JavascriptExecutor js = (JavascriptExecutor) page;
+        js.executeScript("window.scrollBy(0, 500)", "");
         WebElement Date = page.findElement(By.xpath("//div/div[2]/div[1]/input[2]"));Thread.sleep(1000);
         Date.click();Thread.sleep(1000);
         page.findElement(By.cssSelector(".today")).click();
     }
     public static void CatalogExpectedDelivery( WebDriver page) throws InterruptedException {
-        JavascriptExecutor js = (JavascriptExecutor) page;
-        js.executeScript("window.scrollBy(0, 500)", "");
-        page.findElement(By.xpath("//div/div[2]/div[2]/input[2]")).click();Thread.sleep(1000);
-        page.findElement(By.cssSelector("body > div.flatpickr-calendar.animate.arrowTop.arrowLeft.open > div.flatpickr-innerContainer > div > div.flatpickr-days > div > span:nth-child(30)")).click();
+        page.findElement(By.xpath("//main[1]/div[1]/form[1]/div[1]/div[2]/div[2]/div[2]/input[2]")).click();Thread.sleep(1000);
+        page.findElement(By.xpath("//div[5]/div[2]/div[1]/div[2]/div[1]/span[42]")).click();Thread.sleep(1000);
     }
     public static void CatalogBuyerManager(String Bm, WebDriver page) throws InterruptedException {
         page.findElement(By.id("select2-buyerManagerId-container")).click();Thread.sleep(1000);

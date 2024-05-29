@@ -13,7 +13,7 @@ public class CommercialEvaluation {
 
     public void BuyerCreateCE(String BuyerId, String Pass, String Title,String PORNotes,
                               String PreOrDict,String PRGroupB, String PRGroupC,
-                              String PRGroupD,String AdminId,WebDriver page) throws InterruptedException {
+                              String PRGroupD,String AdminId,String VendorId,String ReqId,WebDriver page) throws InterruptedException {
         page.findElement(By.id("Input_Email")).sendKeys(BuyerId);Thread.sleep(1000);
         page.findElement(By.id("Input_Password")).sendKeys(Pass);Thread.sleep(1000);
         page.findElement(By.id("login-submit")).click();Thread.sleep(1000);
@@ -33,6 +33,6 @@ public class CommercialEvaluation {
         js2.executeScript("window.scrollBy(0, 1400)");Thread.sleep(1000);
         page.findElement(By.xpath("//a[contains(text(),'Create POR')]")).click();Thread.sleep(2000);
         NonCatalogPOR nonCatalogPOR = new NonCatalogPOR(page);
-        nonCatalogPOR.BuyerCreatePOR(PORNotes,PreOrDict,Pass,Title,PRGroupB,PRGroupC,PRGroupD,AdminId,BuyerId,page);
+        nonCatalogPOR.BuyerCreatePOR(PORNotes,PreOrDict,Pass,Title,PRGroupB,PRGroupC,PRGroupD,AdminId,BuyerId,VendorId,ReqId,page);
     }
 }

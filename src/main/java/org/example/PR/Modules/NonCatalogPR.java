@@ -68,6 +68,11 @@ public class NonCatalogPR {
         page.findElement(By.id("select2-projectManagerId-container")).click();Thread.sleep(1000);
         page.findElement(By.cssSelector("input[class='select2-search__field']")).sendKeys(Pm);Thread.sleep(1000);
         page.findElement(By.cssSelector(".select2-results__option")).click();Thread.sleep(1000);
+        JavascriptExecutor js = (JavascriptExecutor) page;
+        js.executeScript("window.scrollBy(0, 150)");Thread.sleep(1000);
+    }
+    public static void NonCatalogInspection(WebDriver page) throws InterruptedException {
+        page.findElement(By.id("inspectrequired")).click();Thread.sleep(1000);
     }
     public static void NonCatalogOrderIntake(String OI, WebDriver page) throws InterruptedException {
         JavascriptExecutor js = (JavascriptExecutor) page;
@@ -78,9 +83,6 @@ public class NonCatalogPR {
     }
     public static void NonCatalogTargetPrice(String TP, WebDriver page) throws InterruptedException {
         page.findElement(By.id("targetpriceid")).sendKeys(TP);Thread.sleep(1000);
-    }
-    public static void NonCatalogInspection(WebDriver page) throws InterruptedException {
-        page.findElement(By.id("inspectRequired")).click();Thread.sleep(1000);
     }
     public static void NonCatalogWarranty(WebDriver page) throws InterruptedException {
         page.findElement(By.id("select2-warrantyrequirementsid-container")).click();Thread.sleep(1000);

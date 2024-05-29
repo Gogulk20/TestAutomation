@@ -55,10 +55,10 @@ public class YKMain {
         String PRGroupB = "projectmanager3@cormsquare.com";
         String PRGroupC = "departmentmanager@cormsquare.com";
         String PRGroupD = "businessunitmanager3@cormsquare.com";
-//        CatalogMethods.CatalogPR(Title,Project,Wbs,Vendor,Rc,Address,Mode,Bm,Pm,OI,ItemsQty,PRNotes,
-//        File1,File2,BuyerId,AdminId,PORNotes,CFO,PreOrDict,PRGroupB,PRGroupC,PRGroupD,page);
-        NonCatalogMethods.NonCatalog(ReqId,Pass,Title,Project,Wbs,Incoterm,Address,Mode,Bm,Pm,OI,TP,
-                ItemsQty,PRNotes,File1,File2,BuyerId,RFQNotes,VendorName,VendorId,InctLocation,QuoRefNum,Gst,PORNotes,CFO,PreOrDict,
-                PRGroupB,PRGroupC,PRGroupD,AdminId,page);
+            CatalogMethods.CatalogPR( ReqId,Pass,Title,Project,Wbs,Vendor,Rc,Address,Mode,Bm,Pm,OI,ItemsQty,PRNotes,File1,
+                    File2,BuyerId,PORNotes,PreOrDict,PRGroupB,PRGroupC,PRGroupD,AdminId,VendorId,page);
+//        NonCatalogMethods.NonCatalog(ReqId,Pass,Title,Project,Wbs,Incoterm,Address,Mode,Bm,Pm,OI,TP,
+//                ItemsQty,PRNotes,File1,File2,BuyerId,RFQNotes,VendorName,VendorId,InctLocation,QuoRefNum,Gst,PORNotes,CFO,PreOrDict,
+//                PRGroupB,PRGroupC,PRGroupD,AdminId,page);
     }
 }

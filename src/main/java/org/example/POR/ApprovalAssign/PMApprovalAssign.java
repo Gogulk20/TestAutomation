@@ -7,17 +7,21 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.time.Duration;
 import java.util.List;
 import java.util.stream.Collectors;
 
 public class PMApprovalAssign {
     public static void PORApproval(String Title, String PRGroupB, String PRGroupC, String PRGroupD,
-                                   String Pass,String AdminId,String BuyerId, WebDriver page) throws InterruptedException {
+                                   String Pass,String AdminId,String BuyerId, String VendorId,String CheckerId,WebDriver page) throws InterruptedException {
         page.findElement(By.xpath("//span[contains(text(), 'My Approvals')]")).click();Thread.sleep(2000);
         page.findElement(By.xpath("//span[contains(text(),'"+Title+"')]")).click();Thread.sleep(2000);
         page.findElement(By.xpath("//button[contains(text(),'Add Approvers')]")).click();Thread.sleep(3000);
         WebElement GroupApproverPopup = page.findElement(By.cssSelector(".modal-content"));
+        WebDriverWait wait = new WebDriverWait(page, Duration.ofSeconds(5));
         if (GroupApproverPopup.isEnabled()) {
 
             WebElement GroupB = page.findElement(By.xpath("//label[contains(text(),'PR Approver Group B')]"));
@@ -39,8 +43,8 @@ public class PMApprovalAssign {
                 page.findElement(By.cssSelector(".select2-results__option")).click();Thread.sleep(1000);
                 page.findElement(By.id("btnSendUserFromPM")).click();Thread.sleep(2000);
             }
-            JavascriptExecutor js = (JavascriptExecutor) page;
-            js.executeScript("window.scrollBy(0, 4200)");Thread.sleep(1000);
+            WebElement panel = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//th[contains(text(),'Approver')]")));
+            ((JavascriptExecutor) page).executeScript("arguments[0].scrollIntoView(true);", panel);
             page.findElement(By.id("btnApprove")).click();Thread.sleep(1000);
             page.findElement(By.cssSelector(".bootbox-accept")).click();Thread.sleep(1000);
             JavascriptExecutor js1 = (JavascriptExecutor) page;
@@ -56,16 +60,16 @@ public class PMApprovalAssign {
                 page.findElement(By.id("login-submit")).click();Thread.sleep(1000);
                 page.findElement(By.xpath("//span[contains(text(), 'My Approvals')]")).click();Thread.sleep(2000);
                 page.findElement(By.xpath("//span[contains(text(),'POR : GHB Company PVT LMT')]")).click();Thread.sleep(1000);
-                JavascriptExecutor js3 = (JavascriptExecutor) page;
-                js3.executeScript("window.scrollBy(0, 4250)");Thread.sleep(1000);
+                WebElement panel1 = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//th[contains(text(),'Approver')]")));
+                ((JavascriptExecutor) page).executeScript("arguments[0].scrollIntoView(true);", panel1);
                 page.findElement(By.id("btnApprove")).click();Thread.sleep(1000);
-                page.findElement(By.cssSelector(".bootbox-accept")).click();Thread.sleep(1000);
+                page.findElement(By.cssSelector(".bootbox-accept")).click();Thread.sleep(2000);
                 LogOut.UserLogOut(page);Thread.sleep(1000);
             }
         }
         else if (!GroupApproverPopup.isEnabled()) {
-            JavascriptExecutor js = (JavascriptExecutor) page;
-            js.executeScript("window.scrollBy(0, 4200)");Thread.sleep(1000);
+            WebElement panel = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//th[contains(text(),'Approver')]")));
+            ((JavascriptExecutor) page).executeScript("arguments[0].scrollIntoView(true);", panel);
             page.findElement(By.id("btnApprove")).click();Thread.sleep(2000);
             page.findElement(By.cssSelector(".bootbox-accept")).click();Thread.sleep(1000);
             JavascriptExecutor js1 = (JavascriptExecutor) page;
@@ -82,14 +86,14 @@ public class PMApprovalAssign {
                 page.findElement(By.id("login-submit")).click();Thread.sleep(2000);
                 page.findElement(By.xpath("//span[contains(text(), 'My Approvals')]")).click();Thread.sleep(3000);
                 page.findElement(By.xpath("//span[contains(text(),'POR : GHB Company PVT LMT')]")).click();Thread.sleep(3000);
-                JavascriptExecutor js2 = (JavascriptExecutor) page;
-                js2.executeScript("window.scrollBy(0, 4200)");Thread.sleep(1000);
+                WebElement panel1 = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//th[contains(text(),'Approver')]")));
+                ((JavascriptExecutor) page).executeScript("arguments[0].scrollIntoView(true);", panel1);
                 page.findElement(By.id("btnApprove")).click();Thread.sleep(1000);
                 page.findElement(By.cssSelector(".bootbox-accept")).click();Thread.sleep(1000);
                 LogOut.UserLogOut(page);Thread.sleep(1000);
             }
         }
         POCreate.BuyerCreatePO(AdminId,Pass,Title,page);
-        POSent.POSentToVendor(BuyerId,Pass,Title,page);
+        POSent.POSentToVendor(BuyerId,Pass,Title,VendorId,CheckerId,page);
     }
 }
