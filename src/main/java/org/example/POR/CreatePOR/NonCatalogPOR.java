@@ -13,7 +13,7 @@ public class NonCatalogPOR {
     }
 
     public void BuyerCreatePOR(String PORNotes,String PreOrDict,String Pass,String Title,String PRGroupB, String PRGroupC,
-                               String PRGroupD,String AdminId, String BuyerId,WebDriver page) throws InterruptedException {
+                               String PRGroupD,String AdminId, String BuyerId,String VendorId,String ReqId,WebDriver page) throws InterruptedException {
         JavascriptExecutor js = (JavascriptExecutor) page;
         js.executeScript("window.scrollBy(0, 1000)");Thread.sleep(1000);
         page.findElement(By.id("notBelow5L")).click();Thread.sleep(1000);
@@ -29,6 +29,6 @@ public class NonCatalogPOR {
         page.findElement(By.id("btnCreate")).click();Thread.sleep(2000);
         page.findElement(By.xpath("//button[contains(text(), 'Yes')]")).click();Thread.sleep(3000);
         PORSendForApproval.SendForApproval(PreOrDict,Pass,page);
-        PMApprovalAssign.PORApproval(Title, PRGroupB, PRGroupC, PRGroupD, Pass, AdminId,BuyerId,page);
+        PMApprovalAssign.PORApproval(Title, PRGroupB, PRGroupC, PRGroupD, Pass, AdminId,BuyerId,VendorId,ReqId,page);
     }
 }
