@@ -13,7 +13,9 @@ public class NonCatalogMethods {
                                           String PRNotes, String File1, String File2, String BuyerId, String RFQNotes,
                                           String VendorName,String VendorId, String InctLocation,String QuoRefNum,String Gst,
                                           String PORNotes, String CFO, String PreOrDict, String PRGroupB, String PRGroupC,
-                                          String PRGroupD, String AdminId, WebDriver page) throws InterruptedException {
+                                          String PRGroupD, String AdminId, String POTrn, String SourceCountry,
+                                          String DestinationCountry, String GrossWeight, String NetWeight,
+                                          String Volume, String DNQuantity,String LMId,WebDriver page) throws InterruptedException {
         LogIn.RequesterId(ReqId,Pass,page);
         NonCatalogPR.NonCatalogCreateButton(page);
         NonCatalogPR.NonCatalogTitle(Title, page);
@@ -49,7 +51,7 @@ public class NonCatalogMethods {
         TechnicalEvaluation technicalEvaluation = new TechnicalEvaluation(page);
         technicalEvaluation.RequesterCreateTE(ReqId,Pass,Title,page);
         CommercialEvaluation commercialEvaluation = new CommercialEvaluation(page);
-        commercialEvaluation.BuyerCreateCE(BuyerId, Pass, Title,PORNotes,PreOrDict,PRGroupB,PRGroupC,PRGroupD,AdminId,VendorId,ReqId,page);
+        commercialEvaluation.BuyerCreateCE(BuyerId, Pass, Title,PORNotes,PreOrDict,PRGroupB,PRGroupC,PRGroupD,AdminId,VendorId,POTrn,ReqId, SourceCountry, DestinationCountry,GrossWeight,NetWeight,Volume,DNQuantity,LMId,VendorName,page);
         return vendorInvite;
     }
 }

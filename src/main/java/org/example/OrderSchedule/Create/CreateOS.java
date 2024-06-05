@@ -13,7 +13,9 @@ public class CreateOS {
     public CreateOS(WebDriver page) {
         this.page=page;
     }
-    public void VendorCreateOS(String VendorId, String Pass, String Title,String BuyerId, String CheckerId,WebDriver page) throws InterruptedException {
+    public void VendorCreateOS(String VendorId, String Pass, String Title,String BuyerId, String POTrn,String CheckerId, String SourceCountry,
+                               String DestinationCountry, String GrossWeight, String NetWeight,
+                               String Volume, String DNQuantity,String LMId,String VendorName,WebDriver page) throws InterruptedException {
         page.findElement(By.id("Input_Email")).sendKeys(VendorId);Thread.sleep(1000);
         page.findElement(By.id("Input_Password")).sendKeys(Pass);Thread.sleep(1000);
         page.findElement(By.id("login-submit")).click();Thread.sleep(1000);
@@ -38,9 +40,9 @@ public class CreateOS {
         JavascriptExecutor js= (JavascriptExecutor)page;
         js.executeScript("window.scrollBy(0,500)");Thread.sleep(1000);
         page.findElement(By.id("btnCreate")).click();Thread.sleep(3000);
-        page.findElement(By.cssSelector(".bootbox-accept")).click();Thread.sleep(1000);
+        page.findElement(By.cssSelector(".bootbox-accept")).click();Thread.sleep(3000);
         LogOut.UserLogOut(page);
         ApproveOS approveOS = new ApproveOS(page);
-        approveOS.BuyerApproveOS(BuyerId,Pass,Title,VendorId,CheckerId,page);
+        approveOS.BuyerApproveOS(BuyerId,Pass,Title,VendorId,POTrn,CheckerId, SourceCountry, DestinationCountry,GrossWeight,NetWeight,Volume,DNQuantity,LMId,VendorName,page);
     }
 }

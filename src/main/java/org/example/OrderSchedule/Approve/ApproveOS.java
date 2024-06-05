@@ -12,7 +12,9 @@ public class ApproveOS {
         this.page=page;
     }
 
-    public void BuyerApproveOS(String BuyerId, String Pass, String Title,String VendorId,String CheckerId, WebDriver page) throws InterruptedException {
+    public void BuyerApproveOS(String BuyerId, String Pass, String Title,String VendorId,String POTrn,String CheckerId, String SourceCountry,
+                               String DestinationCountry, String GrossWeight, String NetWeight,
+                               String Volume, String DNQuantity,String LMId,String VendorName,WebDriver page) throws InterruptedException {
         page.findElement(By.id("Input_Email")).sendKeys(BuyerId);
         page.findElement(By.id("Input_Password")).sendKeys(Pass);
         page.findElement(By.id("login-submit")).click();
@@ -25,6 +27,6 @@ public class ApproveOS {
         page.findElement(By.cssSelector(".bootbox-accept")).click();Thread.sleep(2000);
         LogOut.UserLogOut(page);
         SendForInspection sendForInspection = new SendForInspection(page);
-        sendForInspection.VendorSendForInspection(VendorId, Pass, Title,CheckerId,page);
+        sendForInspection.VendorSendForInspection(VendorId, Pass, Title,POTrn,CheckerId, SourceCountry, DestinationCountry,GrossWeight,NetWeight,Volume,DNQuantity,LMId,VendorName,page);
     }
 }

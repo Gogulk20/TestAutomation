@@ -11,14 +11,15 @@ public class Assign {
     public Assign(WebDriver page){
         this.page=page;
     }
-    public void RequesterAssignIns(String ReqId,String Pass,String Title,WebDriver page) throws InterruptedException {
+    public static String RequesterAssignIns(String ReqId, String Pass, String Title,String VendorId, String SourceCountry,
+                                     String DestinationCountry, String GrossWeight, String NetWeight,
+                                     String Volume, String DNQuantity, String LMId, String POTrn,String VendorName,WebDriver page) throws InterruptedException {
         page.findElement(By.id("Input_Email")).sendKeys(ReqId);Thread.sleep(1000);
         page.findElement(By.id("Input_Password")).sendKeys(Pass);Thread.sleep(1000);
         page.findElement(By.id("login-submit")).click();Thread.sleep(1000);
-        page.findElement(By.xpath("//span[contains(text(),'Purchase Orders')]")).click();Thread.sleep(1000);
-        page.findElement(By.xpath("//span[contains(text(),'" + Title + "')]")).click();Thread.sleep(3000);
-        String POTrn = page.findElement(By.id("transactionIdLink")).getText();
-        System.out.println(POTrn);
+//        page.findElement(By.xpath("//span[contains(text(),'Purchase Orders')]")).click();Thread.sleep(1000);
+//        page.findElement(By.xpath("//span[contains(text(),'" + Title + "')]")).click();Thread.sleep(3000);
+//        POTrn = page.findElement(By.id("transactionIdLink")).getText();
         page.findElement(By.xpath("//span[contains(text(),'Order Schedules')]")).click();Thread.sleep(1000);
         List<WebElement> rows = page.findElements(By.cssSelector("#listContainer tr td"));
         for (WebElement row : rows) {
@@ -34,6 +35,7 @@ public class Assign {
         page.findElement(By.cssSelector(".select2-results__option")).click();Thread.sleep(1000);
         page.findElement(By.id("saveInspector")).click();Thread.sleep(3000);
         Create create = new Create(page);
-        create.RequesterCreateIns(page);
+        create.RequesterCreateIns(VendorId, Pass, Title, SourceCountry, DestinationCountry,GrossWeight,NetWeight,Volume,DNQuantity,LMId, POTrn,VendorName,page);
+        return POTrn;
     }
 }

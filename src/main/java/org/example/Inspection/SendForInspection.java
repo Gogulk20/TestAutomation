@@ -14,7 +14,9 @@ public class SendForInspection {
         this.page=page;
     }
 
-    public void VendorSendForInspection(String VendorId, String Pass, String Title,String CheckerId, WebDriver page) throws InterruptedException {
+    public void VendorSendForInspection(String VendorId, String Pass, String Title,String POTrn,String CheckerId, String SourceCountry,
+                                        String DestinationCountry, String GrossWeight, String NetWeight,
+                                        String Volume, String DNQuantity,String LMId, String VendorName,WebDriver page) throws InterruptedException {
         page.findElement(By.id("Input_Email")).sendKeys(VendorId);
         page.findElement(By.id("Input_Password")).sendKeys(Pass);
         page.findElement(By.id("login-submit")).click();
@@ -30,7 +32,7 @@ public class SendForInspection {
         page.findElement(By.id("glbBtnChangeVendor")).click();Thread.sleep(1000);
         page.findElement(By.xpath("//span[contains(text(),'Purchase Order')]")).click();Thread.sleep(1000);
         page.findElement(By.xpath("//span[contains(text(),'" + Title + "')]")).click();Thread.sleep(3000);
-        String POTrn = page.findElement(By.id("trnsactionId")).getText();
+        POTrn = page.findElement(By.id("trnsactionId")).getText();
         page.findElement(By.xpath("//span[contains(text(),'Order Schedules')]")).click();Thread.sleep(1000);
         List<WebElement> rows = page.findElements(By.cssSelector("#listContainer tr td"));
         for (WebElement row : rows) {
@@ -44,6 +46,6 @@ public class SendForInspection {
         page.findElement(By.cssSelector(".bootbox-accept")).click();Thread.sleep(2000);
         LogOut.UserLogOut(page);
         Assign assign = new Assign(page);
-        assign.RequesterAssignIns(CheckerId,Pass,Title,page);
+        assign.RequesterAssignIns(CheckerId,Pass,Title,VendorId, SourceCountry, DestinationCountry,GrossWeight,NetWeight,Volume,DNQuantity,LMId, POTrn,VendorName,page);
     }
 }

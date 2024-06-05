@@ -16,7 +16,10 @@ import java.util.stream.Collectors;
 
 public class PMApprovalAssign {
     public static void PORApproval(String Title, String PRGroupB, String PRGroupC, String PRGroupD,
-                                   String Pass,String AdminId,String BuyerId, String VendorId,String CheckerId,WebDriver page) throws InterruptedException {
+                                   String Pass,String AdminId,String BuyerId, String VendorId,String POTrn,
+                                   String CheckerId, String SourceCountry,String DestinationCountry,
+                                   String GrossWeight, String NetWeight, String Volume, String DNQuantity,String LMId,
+                                   String VendorName,WebDriver page) throws InterruptedException {
         page.findElement(By.xpath("//span[contains(text(), 'My Approvals')]")).click();Thread.sleep(2000);
         page.findElement(By.xpath("//span[contains(text(),'"+Title+"')]")).click();Thread.sleep(2000);
         page.findElement(By.xpath("//button[contains(text(),'Add Approvers')]")).click();Thread.sleep(3000);
@@ -94,6 +97,6 @@ public class PMApprovalAssign {
             }
         }
         POCreate.BuyerCreatePO(AdminId,Pass,Title,page);
-        POSent.POSentToVendor(BuyerId,Pass,Title,VendorId,CheckerId,page);
+        POSent.POSentToVendor(BuyerId,Pass,Title,VendorId,POTrn,CheckerId, SourceCountry, DestinationCountry,GrossWeight,NetWeight,Volume,DNQuantity,LMId,VendorName,page);
     }
 }
