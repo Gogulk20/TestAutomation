@@ -23,7 +23,7 @@ public class YKMain {
         page.get("https://yea-test.cormsquare.com/Identity/Account/Login");
         page.manage().window().maximize();
         String Title = "GHB Company PVT LMT";
-        String Project = "E256232Q00";
+        String Project = "E033132400";
         String ReqId = "requester@cormsquare.com";
         String Pass = "Admin@123";
         String Wbs = "J11BOPH";
@@ -55,8 +55,17 @@ public class YKMain {
         String PRGroupB = "projectmanager3@cormsquare.com";
         String PRGroupC = "departmentmanager@cormsquare.com";
         String PRGroupD = "businessunitmanager3@cormsquare.com";
+        String SourceCountry = "SriLanka";
+        String DestinationCountry = "India";
+        String GrossWeight = "45";
+        String NetWeight = "25";
+        String Volume = "35";
+        String DNQuantity = "55";
+        String LMId = "logisticsmanager@cormsquare.com";
+        String POTrn = "";
             CatalogMethods.CatalogPR( ReqId,Pass,Title,Project,Wbs,Vendor,Rc,Address,Mode,Bm,Pm,OI,ItemsQty,PRNotes,File1,
-                    File2,BuyerId,PORNotes,PreOrDict,PRGroupB,PRGroupC,PRGroupD,AdminId,VendorId,page);
+                    File2,BuyerId,PORNotes,PreOrDict,PRGroupB,PRGroupC,PRGroupD,AdminId,VendorId,POTrn,SourceCountry,
+                    DestinationCountry,GrossWeight,NetWeight,Volume,DNQuantity,LMId,VendorName,page);
 //        NonCatalogMethods.NonCatalog(ReqId,Pass,Title,Project,Wbs,Incoterm,Address,Mode,Bm,Pm,OI,TP,
 //                ItemsQty,PRNotes,File1,File2,BuyerId,RFQNotes,VendorName,VendorId,InctLocation,QuoRefNum,Gst,PORNotes,CFO,PreOrDict,
 //                PRGroupB,PRGroupC,PRGroupD,AdminId,page);

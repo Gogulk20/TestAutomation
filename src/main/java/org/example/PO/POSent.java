@@ -8,7 +8,9 @@ import org.openqa.selenium.WebDriver;
 
 public class POSent {
 
-    public static void POSentToVendor(String BuyerId,String Pass,String Title,String VendorId,String CheckerId, WebDriver page) throws InterruptedException {
+    public static void POSentToVendor(String BuyerId,String Pass,String Title,String VendorId,String POTrn,String CheckerId, String SourceCountry,
+                                      String DestinationCountry, String GrossWeight, String NetWeight,
+                                      String Volume, String DNQuantity,String LMId,String VendorName,WebDriver page) throws InterruptedException {
         page.findElement(By.id("Input_Email")).sendKeys(BuyerId);Thread.sleep(1000);
         page.findElement(By.id("Input_Password")).sendKeys(Pass);Thread.sleep(1000);
         page.findElement(By.id("login-submit")).click();Thread.sleep(1000);
@@ -20,6 +22,6 @@ public class POSent {
         page.findElement(By.id("vendorSendMailBtnId")).click();Thread.sleep(1000);
         LogOut.UserLogOut(page);
         CreateOS createOS = new CreateOS(page);
-        createOS.VendorCreateOS(VendorId, Pass, Title,BuyerId,CheckerId,page);
+        createOS.VendorCreateOS(VendorId, Pass, Title,BuyerId,POTrn,CheckerId, SourceCountry, DestinationCountry,GrossWeight,NetWeight,Volume,DNQuantity,LMId,VendorName,page);
     }
 }

@@ -2,8 +2,6 @@ package org.example.Methods;
 
 import org.example.*;
 import org.example.Login.LogIn;
-import org.example.OrderSchedule.Approve.ApproveOS;
-import org.example.OrderSchedule.Create.CreateOS;
 import org.example.PO.POCreate;
 import org.example.PO.POSent;
 import org.example.PR.AssignBuyer.PRAssignBuyer;
@@ -20,7 +18,9 @@ public class CatalogMethods extends YKMain{
                                      String Mode, String Bm, String Pm, String OI, String ItemsQty,
                                      String PRNotes, String File1, String File2, String BuyerId,
                                      String PORNotes, String PreOrDict, String PRGroupB, String PRGroupC,
-                                     String PRGroupD, String AdminId, String VendorId, WebDriver page) throws InterruptedException {
+                                     String PRGroupD, String AdminId, String VendorId,String POTrn, String SourceCountry,
+                                     String DestinationCountry, String GrossWeight, String NetWeight,
+                                     String Volume, String DNQuantity, String LMId, String VendorName,WebDriver page) throws InterruptedException {
                 LogIn.RequesterId(ReqId, Pass, page);
                 CatalogPR.CatalogCreateButton(page);
                 CatalogPR.CatalogTitle(Title, page);
@@ -44,9 +44,8 @@ public class CatalogMethods extends YKMain{
                 PRAssignBuyer.BuyerAssign(Bm,Pass,BuyerId,Title,page);
                 CatalogPOR.CreatePOR(BuyerId, Pass, Title, PORNotes, page);
                 PORSendForApproval.SendForApproval(PreOrDict,Pass, page);
-                PMApprovalAssign.PORApproval(Title, PRGroupB, PRGroupC, PRGroupD, Pass,AdminId,BuyerId,VendorId,ReqId,page);
-                POCreate.BuyerCreatePO(AdminId,Pass,Title,page);
-                POSent.POSentToVendor(BuyerId,Pass,Title,VendorId,ReqId,page);
+                PMApprovalAssign.PORApproval(Title, PRGroupB, PRGroupC, PRGroupD, Pass,AdminId,BuyerId,VendorId,POTrn,ReqId, SourceCountry, DestinationCountry,GrossWeight,NetWeight,Volume,DNQuantity,LMId,VendorName,page);
+
 
         }
 }
