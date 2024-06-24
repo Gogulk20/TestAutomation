@@ -1,27 +1,38 @@
 package org.example.PO;
 
 import org.example.LogOut.LogOut;
+import org.example.Login.LogIn;
 import org.example.OrderSchedule.Create.CreateOS;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 
 public class POSent {
+    WebDriver page;
+    public POSent(WebDriver page){
+        this.page=page;
+        PageFactory.initElements(page,this);
+    }
+    @FindBy(xpath = "//span[contains(text(), 'Purchase Orders')]")
+    WebElement PurchaseOrder;
+    @FindBy(id = "btnSendPO")
+    WebElement SendForVendorButton;
+    @FindBy(id = "vendorSendMailBtnId")
+    WebElement SendMailButton;
 
-    public static void POSentToVendor(String BuyerId,String Pass,String Title,String VendorId,String POTrn,String CheckerId, String SourceCountry,
-                                      String DestinationCountry, String GrossWeight, String NetWeight,
-                                      String Volume, String DNQuantity,String LMId,String VendorName,WebDriver page) throws InterruptedException {
-        page.findElement(By.id("Input_Email")).sendKeys(BuyerId);Thread.sleep(1000);
-        page.findElement(By.id("Input_Password")).sendKeys(Pass);Thread.sleep(1000);
-        page.findElement(By.id("login-submit")).click();Thread.sleep(1000);
-        page.findElement(By.xpath("//span[contains(text(), 'Purchase Orders')]")).click();Thread.sleep(2000);
+
+    public void POSentToVendor(String BuyerId,String Pass,String Title) throws InterruptedException {
+        LogIn logIn = new LogIn(page);
+        logIn.UserLogin(BuyerId,Pass);Thread.sleep(1000);
+        PurchaseOrder.click();Thread.sleep(2000);
         page.findElement(By.xpath("//span[contains(text(),'"+Title+"')]")).click();Thread.sleep(3000);
-        page.findElement(By.id("btnSendPO")).click();Thread.sleep(1000);
+        SendForVendorButton.click();Thread.sleep(1000);
         JavascriptExecutor js = (JavascriptExecutor) page;
         js.executeScript("window.scrollBy(0, 900)");Thread.sleep(1000);
-        page.findElement(By.id("vendorSendMailBtnId")).click();Thread.sleep(1000);
+        SendMailButton.click();Thread.sleep(1000);
         LogOut.UserLogOut(page);
-        CreateOS createOS = new CreateOS(page);
-        createOS.VendorCreateOS(VendorId, Pass, Title,BuyerId,POTrn,CheckerId, SourceCountry, DestinationCountry,GrossWeight,NetWeight,Volume,DNQuantity,LMId,VendorName,page);
     }
 }

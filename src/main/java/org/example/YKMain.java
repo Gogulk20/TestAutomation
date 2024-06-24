@@ -1,73 +1,54 @@
 package org.example;
-
-//import org.openqa.selenium.interactions.Actions;
-
-
-import io.github.bonigarcia.wdm.WebDriverManager;
-import org.example.Methods.CatalogMethods;
-import org.example.Methods.NonCatalogMethods;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 
 public class YKMain {
-
-    public static void main(String[] args) throws InterruptedException {
-
+    WebDriver page;
+    public YKMain(WebDriver page){
+        this.page=page;
+    }
 //                ChromeOptions options = new ChromeOptions();
 //                System.setProperty("webdriver.chrome.driver", "C:\\Chrome Driver\\chromedriver-win64 (1)\\chromedriver-win64\\chromedriver.exe");
 //                options.addArguments("--remote-allow-origins=*");
 //                WebDriver page = new ChromeDriver(options);
-
-        WebDriverManager.chromedriver().setup();
-        WebDriver page = new ChromeDriver();
-        page.get("https://yea-test.cormsquare.com/Identity/Account/Login");
-        page.manage().window().maximize();
-        String Title = "GHB Company PVT LMT";
-        String Project = "E033132400";
-        String ReqId = "requester@cormsquare.com";
-        String Pass = "Admin@123";
-        String Wbs = "J11BOPH";
-        String Vendor = "Alpha Limited";
-        String Rc = "Alpha Rate Contract 2";
-        String Incoterm = "EXW";
-        String Address = "200315579";
-        String Mode = "Road";
-        String Bm = "buyermanager@cormsquare.com";
-        String Pm = "projectmanager@cormsquare.com";
-        String OI = "9999";
-        String TP = "8888";
-        String ItemsCat = "cable";
-        String ItemsQty = "9";
-        String PRNotes = "PR Notes";
-        String File1 = "C:\\Users\\Vidya Abbigeri\\Downloads\\ExportItems (2).xlsx";
-        String File2 = "C:\\Users\\Vidya Abbigeri\\Downloads\\ImportRequisitionItems.xlsx";
-        String BuyerId = "buyer@cormsquare.com";
-        String RFQNotes = "Vendor Notes";
-        String VendorName = "Alpha Limited";
-        String VendorId = "alpha123@cormsquare.com";
-        String AdminId = "admin@cormsquare.com";
-        String InctLocation = "India";
-        String QuoRefNum = "465623";
-        String Gst = "21";
-        String PORNotes = "POR Notes";
-        String CFO = "cfo@cormsquare.com";
-        String PreOrDict = "hazel@sharklasers.com";
-        String PRGroupB = "projectmanager3@cormsquare.com";
-        String PRGroupC = "departmentmanager@cormsquare.com";
-        String PRGroupD = "businessunitmanager3@cormsquare.com";
-        String SourceCountry = "SriLanka";
-        String DestinationCountry = "India";
-        String GrossWeight = "45";
-        String NetWeight = "25";
-        String Volume = "35";
-        String DNQuantity = "55";
-        String LMId = "logisticsmanager@cormsquare.com";
-        String POTrn = "";
-            CatalogMethods.CatalogPR( ReqId,Pass,Title,Project,Wbs,Vendor,Rc,Address,Mode,Bm,Pm,OI,ItemsQty,PRNotes,File1,
-                    File2,BuyerId,PORNotes,PreOrDict,PRGroupB,PRGroupC,PRGroupD,AdminId,VendorId,POTrn,SourceCountry,
-                    DestinationCountry,GrossWeight,NetWeight,Volume,DNQuantity,LMId,VendorName,page);
-//        NonCatalogMethods.NonCatalog(ReqId,Pass,Title,Project,Wbs,Incoterm,Address,Mode,Bm,Pm,OI,TP,
-//                ItemsQty,PRNotes,File1,File2,BuyerId,RFQNotes,VendorName,VendorId,InctLocation,QuoRefNum,Gst,PORNotes,CFO,PreOrDict,
-//                PRGroupB,PRGroupC,PRGroupD,AdminId,page);
+        public static final String Title = "GHB Company PVT LMT";
+        public static String Project = "E033132400";
+        public static String ReqId = "requester@cormsquare.com";
+        public static String Pass = "Admin@123";
+        public static String Wbs = "J11BOPH";
+        public static String Vendor = "Alpha Limited";
+        public static String Rc = "Alpha Rate Contract 2";
+        public static String Incoterm = "EXW";
+        public static String Address = "200315579";
+        public static String Mode = "Road";
+        public static String Bm = "buyermanager@cormsquare.com";
+        public static String Pm = "projectmanager@cormsquare.com";
+        public static String OI = "9999";
+        public static String TP = "8888";
+        public static String ItemsCat = "cable";
+        public static String ItemsQty = "9";
+        public static String PRNotes = "PR Notes";
+        public static String File1 = "C:\\Users\\Vidya Abbigeri\\Downloads\\ExportItems (2).xlsx";
+        public static String File2 = "C:\\Users\\Vidya Abbigeri\\Downloads\\ImportRequisitionItems.xlsx";
+        public static String BuyerId = "buyer@cormsquare.com";
+        public static String RFQNotes = "Vendor Notes";
+        public static String VendorName = "Alpha Limited";
+        public static String VendorId = "alpha123@cormsquare.com";
+        public static String AdminId = "admin@cormsquare.com";
+        public static String InctLocation = "India";
+        public static String QuoRefNum = "465623";
+        public static String Gst = "21";
+        public static String PORNotes = "POR Notes";
+        public static String CFO = "cfo@cormsquare.com";
+        public static String PreOrDict = "Achyuth@sharklasers.com";
+        public static String PRGroupB = "projectmanager3@cormsquare.com";
+        public static String PRGroupC = "departmentmanager@cormsquare.com";
+        public static String PRGroupD = "businessunitmanager3@cormsquare.com";
+        public static String SourceCountry = "SriLanka";
+        public static String DestinationCountry = "India";
+        public static String GrossWeight = "45";
+        public static String NetWeight = "25";
+        public static String Volume = "35";
+        public static String DNQuantity = "55";
+        public static String LMId = "logisticsmanager@cormsquare.com";
+        public static String INVNumber = "INV84655";
     }
-}

@@ -1,13 +1,24 @@
 package org.example.PR.SendForApproval;
 
-import org.example.LogOut.LogOut;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 
 public class PRSendForApproval {
-    public static void Approval(WebDriver page) throws InterruptedException {
-        page.findElement(By.xpath("//button[contains(text(),'Send for Approval')]")).click();Thread.sleep(1000);
-        page.findElement(By.xpath("//button[contains(text(),'Yes')]")).click();Thread.sleep(2000);
-        LogOut.UserLogOut(page);
+    WebDriver page;
+    public PRSendForApproval(WebDriver page){
+        this.page=page;
+        PageFactory.initElements(page,this);
     }
+    @FindBy(xpath = "//button[contains(text(),'Send for Approval')]")
+    WebElement ClickSendForApprovalButton;
+    @FindBy(xpath = "//button[contains(text(),'Yes')]")
+    WebElement ClickYes;
+
+
+    public void Approval() throws InterruptedException {
+        ClickSendForApprovalButton.click();Thread.sleep(1000);
+        ClickYes.click();Thread.sleep(2000);
+            }
 }

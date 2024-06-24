@@ -1,40 +1,59 @@
 package org.example.DispatchNotes.Assign;
 
 import org.example.Inspection.Assign;
+import org.example.Login.LogIn;
 import org.example.WorkOrder.Create.CreateWO;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 
 import java.util.List;
 
-public class DNAssign extends Assign {
+public class DNAssign  {
     WebDriver page;
     public DNAssign(WebDriver page) throws InterruptedException {
-        super(page);
         this.page=page;
+        PageFactory.initElements(page,this);
     }
+    @FindBy(id = "ni-dispatch-notes")
+    WebElement DispatchNote;
+    @FindBy(css = "#listContainer tr td")
+    List<WebElement> DiscpatchNoteList;
+    @FindBy(css = ".btn-link")
+    WebElement TRNLink;
+    @FindBy(id = "dropdownMenuButton")
+    WebElement AssignDropdownButton;
+    @FindBy(id = "btnToAssign")
+    WebElement AssignButton;
+    @FindBy(id = "select2-assignerId-container")
+    WebElement UserField;
+    @FindBy(css = ".select2-search__field")
+    WebElement UserId;
+    @FindBy(css = ".select2-results__option")
+    WebElement LMUserId;
+    @FindBy(id = "saveAssine")
+    WebElement SubmitButton;
 
-    public static void LMAssignDN(String LMId,String Pass,String POTrn,String VendorName,String VendorID,WebDriver page) throws InterruptedException {
-        page.findElement(By.id("Input_Email")).sendKeys(LMId);Thread.sleep(1000);
-        page.findElement(By.id("Input_Password")).sendKeys(Pass);Thread.sleep(1000);
-        page.findElement(By.id("login-submit")).click();Thread.sleep(1000);
-        page.findElement(By.id("ni-dispatch-notes")).click();Thread.sleep(3000);
-        List<WebElement> rows = page.findElements(By.cssSelector("#listContainer tr td"));
+
+    public void LMAssignDN(String LMId,String Pass,String POTrn) throws InterruptedException {
+        LogIn logIn = new LogIn(page);
+        logIn.UserLogin(LMId,Pass);Thread.sleep(1000);
+        DispatchNote.click();Thread.sleep(3000);
+        List<WebElement> rows = DiscpatchNoteList;
         for (WebElement row : rows) {
             if (row.getText().contains(POTrn)) {
-                WebElement btnLink = page.findElement(By.cssSelector(".btn-link"));
+                WebElement btnLink = TRNLink;
                 btnLink.click();Thread.sleep(3000);
                 break;
             }
         }
-        page.findElement(By.id("dropdownMenuButton")).click();Thread.sleep(1000);
-        page.findElement(By.id("btnToAssign")).click();Thread.sleep(1000);
-        page.findElement(By.id("select2-assignerId-container")).click();Thread.sleep(1000);
-        page.findElement(By.cssSelector(".select2-search__field")).sendKeys(LMId);Thread.sleep(1000);
-        page.findElement(By.cssSelector(".select2-results__option")).click();Thread.sleep(1000);
-        page.findElement(By.id("saveAssine")).click();Thread.sleep(3000);
-        CreateWO createWO = new CreateWO(page);
-        createWO.LMCreateWO(VendorName,POTrn,VendorID,Pass,LMId,page);
-    }
+        AssignDropdownButton.click();Thread.sleep(1000);
+        AssignButton.click();Thread.sleep(1000);
+        UserField.click();Thread.sleep(1000);
+        UserId.sendKeys(LMId);Thread.sleep(1000);
+        LMUserId.click();Thread.sleep(1000);
+        SubmitButton.click();Thread.sleep(3000);
+        }
 }
