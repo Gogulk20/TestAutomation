@@ -1,18 +1,41 @@
 package org.example.PR.AssignBuyer;
 import org.example.LogOut.LogOut;
-import org.openqa.selenium.By;
+import org.example.Login.LogIn;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+import static org.example.Variables.YKMain.Title;
+
 public class PRAssignBuyer {
-    public static void BuyerAssign(String Bm, String Pass,String BuyerId, String Title, WebDriver page) throws InterruptedException {
-        page.findElement(By.id("Input_Email")).sendKeys(Bm);Thread.sleep(1000);
-        page.findElement(By.id("Input_Password")).sendKeys(Pass);Thread.sleep(1000);
-        page.findElement(By.id("login-submit")).click();Thread.sleep(3000);
-        page.findElement(By.xpath("//span[contains(text(),'"+ Title +"')]")).click();Thread.sleep(2000);
-        page.findElement(By.id("btnAssignUser")).click();Thread.sleep(1000);
-        page.findElement(By.id("select2-bgUser-container")).click();Thread.sleep(1000);
-        page.findElement(By.cssSelector("input[class='select2-search__field']")).sendKeys(BuyerId);Thread.sleep(2000);
-        page.findElement(By.cssSelector(".select2-results__option")).click();Thread.sleep(1000);
-        page.findElement(By.id("saveBuyerUser")).click();Thread.sleep(2000);
+    WebDriver page;
+    public PRAssignBuyer(WebDriver page){
+        this.page=page;
+        PageFactory.initElements(page,this);
+    }
+    @FindBy(id = "btnAssignUser")
+    WebElement ClickAssignBuyerButton;
+    @FindBy(id = "select2-bgUser-container")
+    WebElement ClickOnBuyerDropdown;
+    @FindBy(css = "input[class='select2-search__field']")
+    WebElement BuyerName;
+    @FindBy(css = ".select2-results__option")
+    WebElement SelectBuyer;
+    @FindBy(id = "saveBuyerUser")
+    WebElement SaveBuyerName;
+    @FindBy(xpath = "//span[contains(text(),'" + Title + "')]")
+    WebElement PRTitle;
+
+    public void BuyerAssign(String Bm, String Pass,String BuyerId) throws InterruptedException {
+        LogIn logIn = new LogIn(page);
+        logIn.UserLogin(Bm,Pass);Thread.sleep(2000);
+        PRTitle.click();Thread.sleep(2000);
+        ClickAssignBuyerButton.click();Thread.sleep(1000);
+        ClickOnBuyerDropdown.click();Thread.sleep(1000);
+        BuyerName.sendKeys(BuyerId);Thread.sleep(2000);
+        SelectBuyer.click();Thread.sleep(1000);
+        SaveBuyerName.click();Thread.sleep(2000);
         LogOut.UserLogOut(page);Thread.sleep(1000);
     }
 }

@@ -1,26 +1,39 @@
 package org.example.RFQ;
 
 import org.example.LogOut.LogOut;
-import org.openqa.selenium.By;
+import org.example.Login.LogIn;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+import static org.example.Variables.YKMain.Title;
 
 public class ReadyForEvaluation {
     WebDriver page;
     public ReadyForEvaluation(WebDriver page) {
         this.page=page;
+        PageFactory.initElements(page,this);
     }
+    @FindBy(xpath = "//span[contains(text(),'Request For Quotations')]")
+    WebElement RFQPage;
+    @FindBy(id = "btnReadyForEvalution")
+    WebElement ReadyForEvaluationButton;
+    @FindBy(css = ".bootbox-accept")
+    WebElement OptionYes;
+    @FindBy(xpath = "//span[contains(text(),'" + Title + "')]")
+    WebElement TrnTitle;
 
-    public void BuyerSentRFE(String BuyerId, String Pass, String Title, WebDriver page) throws InterruptedException {
-        page.findElement(By.id("Input_Email")).sendKeys(BuyerId);Thread.sleep(1000);
-        page.findElement(By.id("Input_Password")).sendKeys(Pass);Thread.sleep(1000);
-        page.findElement(By.id("login-submit")).click();Thread.sleep(1000);
-        page.findElement(By.xpath("//span[contains(text(),'Request For Quotations')]")).click();Thread.sleep(2000);
-        page.findElement(By.xpath("//span[contains(text(),'" + Title + "')]")).click();Thread.sleep(2000);
+    public void BuyerSentRFE(String BuyerId, String Pass) throws InterruptedException {
+        LogIn logIn = new LogIn(page);
+        logIn.UserLogin(BuyerId,Pass);
+        RFQPage.click();Thread.sleep(2000);
+        TrnTitle.click();Thread.sleep(2000);
         JavascriptExecutor js = (JavascriptExecutor) page;
-        js.executeScript("window.scrollBy(0, 1800)");Thread.sleep(1000);
-        page.findElement(By.id("btnReadyForEvalution")).click();Thread.sleep(1000);
-        page.findElement(By.cssSelector(".bootbox-accept")).click();Thread.sleep(2000);
+        js.executeScript("window.scrollBy(0, 1700)");Thread.sleep(1000);
+        ReadyForEvaluationButton.click();Thread.sleep(1000);
+        OptionYes.click();Thread.sleep(2000);
         LogOut.UserLogOut(page);
     }
 }

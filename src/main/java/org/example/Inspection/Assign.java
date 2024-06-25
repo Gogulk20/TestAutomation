@@ -1,8 +1,11 @@
 package org.example.Inspection;
 
+import org.example.Login.LogIn;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 
 import java.util.List;
 
@@ -10,32 +13,42 @@ public class Assign {
     WebDriver page;
     public Assign(WebDriver page){
         this.page=page;
+        PageFactory.initElements(page,this);
     }
-    public static String RequesterAssignIns(String ReqId, String Pass, String Title,String VendorId, String SourceCountry,
-                                     String DestinationCountry, String GrossWeight, String NetWeight,
-                                     String Volume, String DNQuantity, String LMId, String POTrn,String VendorName,WebDriver page) throws InterruptedException {
-        page.findElement(By.id("Input_Email")).sendKeys(ReqId);Thread.sleep(1000);
-        page.findElement(By.id("Input_Password")).sendKeys(Pass);Thread.sleep(1000);
-        page.findElement(By.id("login-submit")).click();Thread.sleep(1000);
-//        page.findElement(By.xpath("//span[contains(text(),'Purchase Orders')]")).click();Thread.sleep(1000);
-//        page.findElement(By.xpath("//span[contains(text(),'" + Title + "')]")).click();Thread.sleep(3000);
-//        POTrn = page.findElement(By.id("transactionIdLink")).getText();
-        page.findElement(By.xpath("//span[contains(text(),'Order Schedules')]")).click();Thread.sleep(1000);
-        List<WebElement> rows = page.findElements(By.cssSelector("#listContainer tr td"));
+    @FindBy(xpath = "//span[contains(text(),'Order Schedules')]")
+    WebElement OrderSchedule;
+    @FindBy(css = "#listContainer tr td")
+    List<WebElement> OrderScheduleListPage;
+    @FindBy(css = ".btn-link")
+    WebElement TRNLink;
+    @FindBy(id = "btnAssignInspector")
+    WebElement AssignInspectorButton;
+    @FindBy(id = "select2-InspectionId-container")
+    WebElement AssignInspectorField;
+    @FindBy(css = ".select2-search__field")
+    WebElement InspectorID;
+    @FindBy(css = ".select2-results__option")
+    WebElement Inspector;
+    @FindBy(id = "saveInspector")
+    WebElement SaveInspector;
+
+    public String RequesterAssignIns(String ReqId, String Pass, String POTrn) throws InterruptedException {
+        LogIn logIn = new LogIn(page);
+        logIn.UserLogin(ReqId,Pass);Thread.sleep(1000);
+        OrderSchedule.click();Thread.sleep(1000);
+        List<WebElement> rows = OrderScheduleListPage;
         for (WebElement row : rows) {
             if (row.getText().contains(POTrn)) {
-                WebElement btnLink = page.findElement(By.cssSelector(".btn-link"));
+                WebElement btnLink = TRNLink;
                 btnLink.click();Thread.sleep(1000);
                 break;
             }
         }
-        page.findElement(By.id("btnAssignInspector")).click();Thread.sleep(1000);
-        page.findElement(By.id("select2-InspectionId-container")).click();Thread.sleep(1000);
-        page.findElement(By.cssSelector(".select2-search__field")).sendKeys(ReqId);Thread.sleep(1000);
-        page.findElement(By.cssSelector(".select2-results__option")).click();Thread.sleep(1000);
-        page.findElement(By.id("saveInspector")).click();Thread.sleep(3000);
-        Create create = new Create(page);
-        create.RequesterCreateIns(VendorId, Pass, Title, SourceCountry, DestinationCountry,GrossWeight,NetWeight,Volume,DNQuantity,LMId, POTrn,VendorName,page);
+        AssignInspectorButton.click();Thread.sleep(1000);
+        AssignInspectorField.click();Thread.sleep(1000);
+        InspectorID.sendKeys(ReqId);Thread.sleep(1000);
+        Inspector.click();Thread.sleep(1000);
+        SaveInspector.click();Thread.sleep(3000);
         return POTrn;
     }
 }
