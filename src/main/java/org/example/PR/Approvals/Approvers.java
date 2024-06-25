@@ -13,7 +13,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
-import static org.example.YKMain.Title;
+import static org.example.Variables.YKMain.Title;
 
 public class Approvers {
     WebDriver page;

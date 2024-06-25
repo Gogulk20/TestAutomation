@@ -1,4 +1,4 @@
-package org.example;
+package org.example.Variables;
 import org.openqa.selenium.WebDriver;
 
 public class YKMain {
@@ -25,7 +25,7 @@ public class YKMain {
         public static String OI = "9999";
         public static String TP = "8888";
         public static String ItemsCat = "cable";
-        public static String ItemsQty = "9";
+        public static String ItemsQty = "50";
         public static String PRNotes = "PR Notes";
         public static String File1 = "C:\\Users\\Vidya Abbigeri\\Downloads\\ExportItems (2).xlsx";
         public static String File2 = "C:\\Users\\Vidya Abbigeri\\Downloads\\ImportRequisitionItems.xlsx";
@@ -50,5 +50,5 @@ public class YKMain {
         public static String Volume = "35";
         public static String DNQuantity = "55";
         public static String LMId = "logisticsmanager@cormsquare.com";
-        public static String INVNumber = "INV84655";
+        public static String INVNumber = "INV00007";
     }

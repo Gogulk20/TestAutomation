@@ -2,8 +2,6 @@ package org.example.POR.ApprovalAssign;
 
 import org.example.LogOut.LogOut;
 import org.example.Login.LogIn;
-import org.example.PO.POCreate;
-import org.example.PO.POSent;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -15,7 +13,7 @@ import java.time.Duration;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import static org.example.YKMain.Title;
+import static org.example.Variables.YKMain.Title;
 
 public class PMApprovalAssign {
     WebDriver page;

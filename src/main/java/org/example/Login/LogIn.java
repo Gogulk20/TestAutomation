@@ -1,5 +1,5 @@
 package org.example.Login;
-import org.example.YKMain;
+import org.example.Variables.YKMain;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
@@ -46,11 +46,10 @@ public class LogIn extends YKMain {
             WebDriverWait wait = new WebDriverWait(page, Duration.ofSeconds(5));
             wait.until(ExpectedConditions.alertIsPresent());
             Alert alert = page.switchTo().alert();
-            alert.accept();
-            Thread.sleep(1000);
+            alert.accept();Thread.sleep(1000);
+            Vendorname.click();Thread.sleep(1000);
+            ContinueButton.click();Thread.sleep(3000);
         } catch (NoSuchElementException e){
         }
-        Vendorname.click();Thread.sleep(1000);
-        ContinueButton.click();Thread.sleep(3000);
     }
 }

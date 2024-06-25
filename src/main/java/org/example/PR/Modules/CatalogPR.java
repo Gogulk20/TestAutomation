@@ -1,7 +1,5 @@
 package org.example.PR.Modules;
 
-import org.example.YKMain;
-import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;

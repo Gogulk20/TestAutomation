@@ -6,6 +6,8 @@ import org.example.DispatchNotes.Create.CreateDN;
 import org.example.Inspection.Assign;
 import org.example.Inspection.Create;
 import org.example.Inspection.SendForInspection;
+import org.example.Invoice.AcceptDoc.InvoiceAccept;
+import org.example.Invoice.Approvers.ApprovalApproves;
 import org.example.Invoice.Create.CreateInvoice;
 import org.example.Login.LogIn;
 import org.example.OrderSchedule.Approve.ApproveOS;
@@ -23,7 +25,7 @@ import org.example.RFQ.*;
 import org.example.WorkOrder.Create.CreateWO;
 import org.example.WorkOrder.OkForInvoice.OkForInvoice;
 import org.example.WorkOrder.TrackerStatus.VendorTrackerStatus;
-import org.example.YKMain;
+import org.example.Variables.YKMain;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
@@ -67,13 +69,13 @@ public class NonCatalog extends YKMain {
         //PMApprove the PR
         Approvers approvers = new Approvers(page);
         approvers.PRApproversApprover(Pass);
-        //Assign Buyer
+        //BuyerManager Assign Buyer
         PRAssignBuyer prAssignBuyer = new PRAssignBuyer(page);
         prAssignBuyer.BuyerAssign(Bm,Pass,BuyerId);
         //Buyer create RFQ
         CreateRFQ createRFQ = new CreateRFQ(page);
         createRFQ.CreateRFQ(BuyerId, Pass, RFQNotes);
-        // Buyer InviteVendor
+        // Buyer Invite Vendor
         VendorInvite vendorInvite = new VendorInvite(page);
         vendorInvite.InviteVendor(VendorName);
         //Vendor Submits the Quotation
@@ -136,5 +138,11 @@ public class NonCatalog extends YKMain {
         //Vendor Create the Invoice
         CreateInvoice createInvoice = new CreateInvoice(page);
         createInvoice.VendorCreateInvoice(VendorId,Pass,POTrn,INVNumber,AdminId);
+        //Buyer Accept the Invoice
+        InvoiceAccept invoiceAccept = new InvoiceAccept(page);
+        String ApproverUserId = invoiceAccept.AcceptInvoice(BuyerId,Pass,POTrn);
+        //Finance Checker Approve the Invoice
+        ApprovalApproves approvalApproves = new ApprovalApproves(page);
+        approvalApproves.InvoiceApprover(ApproverUserId,Pass,POTrn);
     }
 }

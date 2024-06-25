@@ -1,16 +1,14 @@
 package org.example.OrderSchedule.Approve;
 
-import org.example.Inspection.SendForInspection;
 import org.example.LogOut.LogOut;
 import org.example.Login.LogIn;
-import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import static org.example.YKMain.Title;
+import static org.example.Variables.YKMain.Title;
 
 public class ApproveOS {
     WebDriver page;

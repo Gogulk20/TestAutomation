@@ -1,20 +1,14 @@
 package org.example.DispatchNotes.Create;
 
-import org.example.DispatchNotes.Assign.DNAssign;
-import org.example.JavaStreams;
 import org.example.LogOut.LogOut;
 import org.example.Login.LogIn;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.time.Duration;
-
-import static org.example.YKMain.Title;
+import static org.example.Variables.YKMain.Title;
 
 public class CreateDN {
     private static final Logger log = LoggerFactory.getLogger(CreateDN.class);
