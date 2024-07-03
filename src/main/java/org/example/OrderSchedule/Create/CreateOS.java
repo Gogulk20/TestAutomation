@@ -33,7 +33,7 @@ public class CreateOS {
 
     public void VendorCreateOS(String VendorId, String Pass) throws InterruptedException {
         LogIn logIn = new LogIn(page);
-        logIn.VendorLogin(VendorId,Pass);
+        logIn.VendorLogin(VendorId,Pass);Thread.sleep(1000);
         PurchaseOrder.click();Thread.sleep(1000);
         TRNTitle.click();Thread.sleep(3000);
         CreateOSButton.click();Thread.sleep(2000);

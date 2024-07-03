@@ -6,7 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import static org.example.Variables.YKMain.Title;
+import static org.example.Variables.YKMain.*;
 
 public class PRAssignBuyer {
     WebDriver page;
@@ -27,7 +27,7 @@ public class PRAssignBuyer {
     @FindBy(xpath = "//span[contains(text(),'" + Title + "')]")
     WebElement PRTitle;
 
-    public void BuyerAssign(String Bm, String Pass,String BuyerId) throws InterruptedException {
+    public void BuyerAssign() throws InterruptedException {
         LogIn logIn = new LogIn(page);
         logIn.UserLogin(Bm,Pass);Thread.sleep(2000);
         PRTitle.click();Thread.sleep(2000);

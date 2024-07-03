@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="YEA Selenium Suite">
+    <test name="YEA Login Page Test">
+        <classes>
+            <class name="com.testComponents.BaseTest">
+            </class>
+        </classes>
+    </test>
+    <test name="YEA Catalog Create Requisition Test">
+        <classes>
+            <class name="com.PurchaseRequisition.CreateCatalog.CatalogPRTest">
+            </class>
+        </classes>
+    </test>
+    <test name="YEA Catalog Send For Approval Test">
+        <classes>
+            <class name="com.PurchaseRequisition.SendForApproval.SendForApprovalTest">
+            </class>
+        </classes>
+    </test>
+
+<!--    <test name="YEA Catalog Reject Test">-->
+<!--        <classes>-->
+<!--            <class name="com.PurchaseRequisition.ApprovalReject.ApprovalRejectPORTest">-->
+<!--            </class>-->
+<!--        </classes>-->
+<!--    </test>-->
+<!--    <test name="YEA Catalog Requester Update PR Test">-->
+<!--        <classes>-->
+<!--            <class name="com.PurchaseRequisition.Edit.PREditTest">-->
+<!--            </class>-->
+<!--        </classes>-->
+<!--    </test>-->
+<!--        <test name="YEA Catalog RE-Send For Approval Test">-->
+<!--        <classes>-->
+<!--            <class name="com.PurchaseRequisition.SendForApproval.SendForApprovalTest">-->
+<!--            </class>-->
+<!--        </classes>-->
+<!--        </test>-->
+<!--    <test name="YEA Catalog Reject Test">-->
+<!--        <classes>-->
+<!--            <class name="com.PurchaseRequisition.ApprovalReject.ApprovalRejectPORTest">-->
+<!--            </class>-->
+<!--        </classes>-->
+<!--    </test>-->
+
+    <test name="YEA Catalog Approvals Approve Test">
+        <classes>
+            <class name="com.PurchaseRequisition.Approvals.ApprovalTest">
+            </class>
+        </classes>
+    </test>
+
+    <!--    <test name="YEA Catalog BM Suspend PR Test">-->
+    <!--        <classes>-->
+    <!--            <class name="com.PurchaseRequisition.Suspend.BMSuspendPRTest">-->
+    <!--            </class>-->
+    <!--        </classes>-->
+    <!--    </test>-->
+    <!--    <test name="YEA Catalog Requester-Update PR Test">-->
+    <!--        <classes>-->
+    <!--            <class name="com.PurchaseRequisition.Edit.PREditTest">-->
+    <!--            </class>-->
+    <!--        </classes>-->
+    <!--    </test>-->
+    <!--    <test name="YEA Catalog After BM Suspend Send For Approval Test">-->
+    <!--        <classes>-->
+    <!--            <class name="com.PurchaseRequisition.SendForApproval.SendForApprovalTest">-->
+    <!--            </class>-->
+    <!--        </classes>-->
+    <!--    </test>-->
+    <!--    <test name="YEA Catalog After BM Suspended Edited bu Requester Approvals Approve Test">-->
+    <!--        <classes>-->
+    <!--            <class name="com.PurchaseRequisition.Approvals.ApprovalTest">-->
+    <!--            </class>-->
+    <!--        </classes>-->
+    <!--    </test>-->
+    <!--    <test name="YEA Catalog BM Suspended Assign Buyer Test">-->
+    <!--        <classes>-->
+    <!--            <class name="com.PurchaseRequisition.Assign.AssignBuyerTest">-->
+    <!--            </class>-->
+    <!--        </classes>-->
+    <!--    </test>-->
+    <!--    <test name="YEA Catalog Buyer Suspend PR Test">-->
+    <!--        <classes>-->
+    <!--            <class name="com.PurchaseRequisition.Suspend.BMSuspendPRTest">-->
+    <!--            </class>-->
+    <!--        </classes>-->
+    <!--    </test>-->
+    <!--    <test name="YEA Catalog Requester-Update PR after Buyer Susupended Test">-->
+    <!--        <classes>-->
+    <!--            <class name="com.PurchaseRequisition.Edit.PREditTest">-->
+    <!--            </class>-->
+    <!--        </classes>-->
+    <!--    </test>-->
+    <!--    <test name="YEA Catalog After Buyer Suspend REQ-Send For Approval Test">-->
+    <!--        <classes>-->
+    <!--            <class name="com.PurchaseRequisition.SendForApproval.SendForApprovalTest">-->
+    <!--            </class>-->
+    <!--        </classes>-->
+    <!--    </test>-->
+    <!--    <test name="YEA Catalog After Buyer Suspended PM-Approvals Approve Test">-->
+    <!--        <classes>-->
+    <!--            <class name="com.PurchaseRequisition.Approvals.ApprovalTest">-->
+    <!--            </class>-->
+    <!--        </classes>-->
+    <!--    </test>-->
+
+    <test name="YEA Catalog Assign Buyer Test">
+        <classes>
+            <class name="com.PurchaseRequisition.Assign.AssignBuyerTest">
+            </class>
+        </classes>
+    </test>
+    <test name="YEA Catalog Create POR Test">
+        <classes>
+            <class name="com.PurchaseOrderRequest.CreatePORCatalog.CatalogCreatePORTest">
+            </class>
+        </classes>
+    </test>
+
+    <!--    <test name="YEA Non Catalog Suspend POR Test">-->
+    <!--        <classes>-->
+    <!--            <class name="com.PurchaseOrderRequest.SuspendPOR.NonCatalogSuspendPORTest">-->
+    <!--            </class>-->
+    <!--        </classes>-->
+    <!--    </test>-->
+    <!--    <test name="YEA Non Catalog POR Edit after Suspend POR Test">-->
+    <!--        <classes>-->
+    <!--            <class name="com.PurchaseOrderRequest.EditPOR.POREditPageTest">-->
+    <!--            </class>-->
+    <!--        </classes>-->
+    <!--    </test>-->
+
+    <test name="YEA Catalog POR Send For Approval Test">
+        <classes>
+            <class name="com.PurchaseOrderRequest.PORSendForApproval.SendForApprovalTest">
+            </class>
+        </classes>
+    </test>
+<!--    <test name="YEA Non Catalog POR Approval Reject Test">-->
+<!--        <classes>-->
+<!--            <class name="com.PurchaseOrderRequest.ApprovalReject.ApprovalRejectPORTest">-->
+<!--            </class>-->
+<!--        </classes>-->
+<!--    </test>-->
+<!--    <test name="YEA Non Catalog POR Edit after Approval Reject Test">-->
+<!--        <classes>-->
+<!--            <class name="com.PurchaseOrderRequest.EditPOR.POREditPageTest">-->
+<!--            </class>-->
+<!--        </classes>-->
+<!--    </test>-->
+<!--    <test name="YEA Non Catalog POR RE-Send For Approval Test">-->
+<!--        <classes>-->
+<!--            <class name="com.PurchaseOrderRequest.PORSendForApproval.SendForApprovalTest">-->
+<!--            </class>-->
+<!--        </classes>-->
+<!--    </test>-->
+    <test name="YEA Catalog POR Approval Assign Test">
+        <classes>
+            <class name="com.PurchaseOrderRequest.ApprovalsAssign.AssignApprovalsTest">
+            </class>
+        </classes>
+    </test>
+    <test name="YEA Catalog Create PO(MSA) Test">
+        <classes>
+            <class name="com.PurchaseOrder.Create.MSACreateTest">
+            </class>
+        </classes>
+    </test>
+    <test name="YEA Catalog PO Send to Vendor Test">
+        <classes>
+            <class name="com.PurchaseOrder.POSendTest.POSendTest">
+            </class>
+        </classes>
+    </test>
+    <test name="YEA Catalog Create OS Test">
+        <classes>
+            <class name="com.OrderSchedule.CreateOS.CreateOSTest">
+            </class>
+        </classes>
+    </test>
+<!--    <test name="YEA Non Catalog Reject OS Test">-->
+<!--        <classes>-->
+<!--            <class name="com.OrderSchedule.RejectOS.RejectOSTest">-->
+<!--            </class>-->
+<!--        </classes>-->
+<!--    </test>-->
+<!--    <test name="YEA Non Catalog Edit OS Test">-->
+<!--        <classes>-->
+<!--            <class name="com.OrderSchedule.EditOS.OSEditPageTest">-->
+<!--            </class>-->
+<!--        </classes>-->
+<!--    </test>-->
+    <test name="YEA Catalog Approve OS Test">
+        <classes>
+            <class name="com.OrderSchedule.ApproveOS.ApproveOSTest">
+            </class>
+        </classes>
+    </test>
+    <test name="YEA Catalog Send for Inspection Test">
+        <classes>
+            <class name="com.Inspections.SendForInspections.SendForInspectionTest">
+            </class>
+        </classes>
+    </test>
+    <test name="YEA Catalog Assign Inspection Test">
+        <classes>
+            <class name="com.Inspections.Assigns.AssignInspectionTest">
+            </class>
+        </classes>
+    </test>
+<!--    <test name="YEA Non Catalog Fail Inspection Test">-->
+<!--        <classes>-->
+<!--            <class name="com.Inspections.InspectionFail.InspectionFailTest">-->
+<!--            </class>-->
+<!--        </classes>-->
+<!--    </test>-->
+<!--    <test name="YEA Non Catalog Send for Inspection After Fails Test">-->
+<!--        <classes>-->
+<!--            <class name="com.Inspections.SendForInspections.SendForInspectionTest">-->
+<!--            </class>-->
+<!--        </classes>-->
+<!--    </test>-->
+<!--    <test name="YEA Non Catalog Assign Inspection After Fails Test">-->
+<!--        <classes>-->
+<!--            <class name="com.Inspections.Assigns.AssignInspectionTest">-->
+<!--            </class>-->
+<!--        </classes>-->
+<!--    </test>-->
+
+    <test name="YEA Catalog Create Inspection Test">
+        <classes>
+            <class name="com.Inspections.CreateIns.CreateInsTest">
+            </class>
+        </classes>
+    </test>
+    <test name="YEA Catalog Create Dispatch Notes Test">
+        <classes>
+            <class name="com.DispatchNotes.CreateDN.CreateDNTest">
+            </class>
+        </classes>
+    </test>
+<!--    <test name="YEA Non Catalog LM return DN Test">-->
+<!--        <classes>-->
+<!--            <class name="com.DispatchNotes.ReturnDN.DNReturnPageTest">-->
+<!--            </class>-->
+<!--        </classes>-->
+<!--    </test>-->
+<!--    <test name="YEA Non Catalog Vendor Edit DN Test">-->
+<!--        <classes>-->
+<!--            <class name="com.DispatchNotes.EditDN.EditDNTest">-->
+<!--            </class>-->
+<!--        </classes>-->
+<!--    </test>-->
+    <test name="YEA Catalog Assign LM in Work Order Test">
+        <classes>
+            <class name="com.DispatchNotes.AssignDN.AssignWOTest">
+            </class>
+        </classes>
+    </test>
+    <test name="YEA Catalog Create Work Order Test">
+        <classes>
+            <class name="com.WorkOrder.CreateWO.CreateWorkOrderTest">
+            </class>
+        </classes>
+    </test>
+    <test name="YEA Catalog Update Tracker Status Test">
+        <classes>
+            <class name="com.WorkOrder.TrackerStatus.TrackerStatusTest">
+            </class>
+        </classes>
+    </test>
+    <test name="YEA Catalog Work Order - Ok For invoice Test">
+        <classes>
+            <class name="com.WorkOrder.OKForInvoice.OKForinvoiceTest">
+            </class>
+        </classes>
+    </test>
+    <test name="YEA Catalog Create Invoice Test">
+        <classes>
+            <class name="com.Invoice.Create.CreateInvoiceTest">
+            </class>
+        </classes>
+    </test>
+<!--    <test name="YEA Non Catalog Invoice Return Documents Test">-->
+<!--        <classes>-->
+<!--            <class name="com.Invoice.Return.ReturnInvoiceTest">-->
+<!--            </class>-->
+<!--        </classes>-->
+<!--    </test>-->
+<!--    <test name="YEA Non Catalog Vendor Edit Invoice Test">-->
+<!--        <classes>-->
+<!--            <class name="com.Invoice.Edit.InvoiceEditTest">-->
+<!--            </class>-->
+<!--        </classes>-->
+<!--    </test>-->
+    <test name="YEA Catalog Invoice Accept Documents Test">
+        <classes>
+            <class name="com.Invoice.AcceptDoc.InvoiceAcceptDocTest">
+            </class>
+        </classes>
+    </test>
+    <test name="YEA Catalog Approvers Approve Test">
+        <classes>
+            <class name="com.Invoice.Approvers.InvoiceApproversTest">
+            </class>
+        </classes>
+    </test>
+
+</suite>

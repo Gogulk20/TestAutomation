@@ -10,6 +10,9 @@ import org.openqa.selenium.support.PageFactory;
 
 import java.util.List;
 
+import static org.example.Variables.YKMain.*;
+import static org.example.Variables.YKMain.Pass;
+
 public class OkForInvoice {
     WebDriver page;
     public OkForInvoice(WebDriver page){
@@ -26,24 +29,41 @@ public class OkForInvoice {
     WebElement OkForInvoiceButton;
     @FindBy(css = ".bootbox-accept")
     WebElement YesButton;
+    @FindBy(xpath = "//span[contains(text(),'" + Title + "')]")
+    WebElement TRNTitle1;
+    @FindBy(xpath = "//span[contains(text(),'Purchase Orders')]")
+    WebElement PurchaseOrder;
+    @FindBy(id = "referenceId")
+    WebElement PONumber;
+    @FindBy(id = "ni-dispatch-notes")
+    WebElement DispatchNote;
+    @FindBy(css = "#listContainer tr td")
+    List<WebElement> DiscpatchNoteList;
 
-
-    public void LMClickOkForInvoice(String LMId, String Pass, String POTrn) throws InterruptedException {
-        LogIn logIn = new LogIn(page);
-        logIn.UserLogin(LMId,Pass);Thread.sleep(1000);
-        WorkOrder.click();Thread.sleep(3000);
-        List<WebElement> rows = WOListPage;
-        for (WebElement row : rows) {
-            if (row.getText().contains(POTrn)) {
-                WebElement btnLink = TRNLink;
-                btnLink.click();Thread.sleep(3000);
-                break;
-            }
-        }
+    public void LMClickOkForInvoice() throws InterruptedException {
         JavascriptExecutor js = (JavascriptExecutor) page;
-        js.executeScript("window.scrollBy(0,-1750)");Thread.sleep(1000);
+        js.executeScript("window.scrollBy(0,-1950)");Thread.sleep(1000);
         OkForInvoiceButton.click();Thread.sleep(1000);
         YesButton.click();Thread.sleep(1000);
         LogOut.UserLogOut(page);
+    }
+    public String GetPOTrnNum() throws InterruptedException {
+        LogIn logIn = new LogIn(page);
+        logIn.UserLogin(BuyerId,Pass);Thread.sleep(1000);
+        PurchaseOrder.click();Thread.sleep(1000);
+        TRNTitle1.click();Thread.sleep(3000);
+        String POTRNNum = PONumber.getText();
+        LogOut.UserLogOut(page);
+        logIn.UserLogin(LMId,Pass);Thread.sleep(1000);
+        WorkOrder.click();Thread.sleep(2000);
+        List<WebElement> rows = WOListPage;
+        for (WebElement row : rows) {
+            if (row.getText().contains(POTRNNum)) {
+                WebElement btnLink = TRNLink;
+                btnLink.click();Thread.sleep(1000);
+                break;
+            }
+        }
+        return POTRNNum;
     }
 }

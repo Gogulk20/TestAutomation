@@ -17,6 +17,8 @@ import java.util.Locale;
 import java.util.Set;
 import java.util.stream.Collectors;
 
+import static org.example.Variables.YKMain.*;
+
 public class CreateInvoice {
     private static final String USD_FORMAT = "%.3f";
     private static final String INR_FORMAT = "%.2f";
@@ -42,8 +44,10 @@ public class CreateInvoice {
     List<WebElement> CompanyDropdownField;
     @FindBy(id = "select2-typeId-container")
     WebElement PurchaseType;
-    @FindBy(xpath = "//li[contains(text(),'Purchase Order')]")
+    @FindBy(xpath = "//span[contains(text(),'Purchase Order')]")
     WebElement PurchaseOrder;
+    @FindBy(xpath = "//li[contains(text(),'Purchase Order')]")
+    WebElement PurchaseOrderOption;
     @FindBy(id = "invoiceNumber")
     WebElement InvoiceNumberField;
     @FindBy(xpath = "//main[1]/div[1]/form[1]/div[1]/div[2]/div[1]/div[1]/div[4]/input[2]")
@@ -82,11 +86,17 @@ public class CreateInvoice {
     WebElement CreateButton;
     @FindBy(css = ".bootbox-accept")
     WebElement YesButton;
+    @FindBy(xpath = "//span[contains(text(),'" + Title + "')]")
+    WebElement TRNTitle;
+    @FindBy(id = "referenceId")
+    WebElement PORefId;
 
-
-    public void VendorCreateInvoice(String VendorId, String Pass, String POTrn, String INVNumber, String AdminId) throws InterruptedException {
+    public void VendorCreateInvoice() throws InterruptedException {
         LogIn logIn = new LogIn(page);
-        logIn.VendorLogin(VendorId, Pass);
+        logIn.VendorLogin(VendorId, Pass);Thread.sleep(1000);
+        PurchaseOrder.click();Thread.sleep(1000);
+        TRNTitle.click();Thread.sleep(3000);
+        String POTrn = PORefId.getText();
         InvoiceModule.click();Thread.sleep(3000);
         CreateInvoiceButton.click();Thread.sleep(3000);
         CompanyField.click();Thread.sleep(1000);
@@ -101,7 +111,7 @@ public class CreateInvoice {
             }
         }
         PurchaseType.click();Thread.sleep(1000);
-        PurchaseOrder.click();Thread.sleep(1000);
+        PurchaseOrderOption.click();Thread.sleep(1000);
         InvoiceNumberField.sendKeys(INVNumber);Thread.sleep(1000);
         InvoiceDateField.click();Thread.sleep(1000);
         InvoiceMaxDate.click();Thread.sleep(1000);

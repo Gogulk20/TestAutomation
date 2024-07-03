@@ -1,5 +1,6 @@
 package org.example.POR.CreatePOR;
 
+import org.example.Login.LogIn;
 import org.example.POR.ApprovalAssign.PMApprovalAssign;
 import org.example.POR.SendForApproval.PORSendForApproval;
 import org.openqa.selenium.By;
@@ -8,6 +9,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+
+import static org.example.Variables.YKMain.*;
 
 public class NonCatalogPOR {
     WebDriver page;
@@ -29,14 +32,24 @@ public class NonCatalogPOR {
     WebElement CreateButton;
     @FindBy(xpath = "//button[contains(text(), 'Yes')]")
     WebElement YesOption;
+    @FindBy(xpath = "//span[contains(text(),'Request For Quotations')]")
+    WebElement RFQPage;
+    @FindBy(xpath = "//span[contains(text(),'" + Title + "')]")
+    WebElement TrnTitle;
 
-    public void BuyerCreatePOR(String PORNotes) throws InterruptedException {
+    public void BuyerCreatePOR() throws InterruptedException {
+        LogIn logIn = new LogIn(page);
+        logIn.UserLogin(BuyerId,Pass);
+        RFQPage.click();Thread.sleep(2000);
+        TrnTitle.click();Thread.sleep(2000);
+        JavascriptExecutor js1 = (JavascriptExecutor) page;
+        js1.executeScript("window.scrollBy(0, 1500)");Thread.sleep(1000);
         CreatePORButton.click();Thread.sleep(2000);
         JavascriptExecutor js = (JavascriptExecutor) page;
         js.executeScript("window.scrollBy(0, 1000)");Thread.sleep(1000);
         NotBelow5LRadioButton.click();Thread.sleep(1000);
-        JavascriptExecutor js1 = (JavascriptExecutor) page;
-        js1.executeScript("window.scrollBy(0, 1500)");Thread.sleep(1000);
+        JavascriptExecutor js3 = (JavascriptExecutor) page;
+        js3.executeScript("window.scrollBy(0, 1500)");Thread.sleep(1000);
         TaxCodeField.click();Thread.sleep(1000);
         FirstTaxCode.click();Thread.sleep(1000);
         JavascriptExecutor js2 = (JavascriptExecutor) page;

@@ -14,8 +14,11 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 import java.util.List;
 
+import static org.example.Variables.YKMain.*;
+
 public class InvoiceAccept {
     WebDriver page;
+    String POTrn;
     public InvoiceAccept(WebDriver page){
         this.page=page;
         PageFactory.initElements(page,this);
@@ -46,10 +49,19 @@ public class InvoiceAccept {
     WebElement YesButton;
     @FindBy(xpath = "//main[1]/div[1]/div[3]/div[2]/div[1]/div[10]/div[1]/div[1]/div[2]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[3]")
     WebElement ApproversId;
+    @FindBy(xpath = "//span[contains(text(),'" + Title + "')]")
+    WebElement TRNTitle;
+    @FindBy(id = "referenceId")
+    WebElement PORefId;
+    @FindBy(xpath = "//span[contains(text(),'Purchase Orders')]")
+    WebElement PurchaseOrder;
 
-    public String AcceptInvoice(String BuyerId, String Pass, String POTrn) throws InterruptedException {
+    public String AcceptInvoice() throws InterruptedException {
         LogIn logIn = new LogIn(page);
         logIn.UserLogin(BuyerId, Pass);
+        PurchaseOrder.click();Thread.sleep(1000);
+        TRNTitle.click();Thread.sleep(3000);
+        POTrn = PORefId.getText();
         InvoiceModule.click();Thread.sleep(3000);
         List<WebElement> rows = InvoiceListPage;Thread.sleep(1000);
         for (WebElement row : rows) {
@@ -60,7 +72,7 @@ public class InvoiceAccept {
             }
         }
         JavascriptExecutor js = (JavascriptExecutor) page;
-        js.executeScript("window.scrollBy(0, 1500)");Thread.sleep(1000);
+        js.executeScript("window.scrollBy(0, 1650)");Thread.sleep(1000);
         AcceptButton1.click();Thread.sleep(1000);
         SelectAllCheckBox.click();Thread.sleep(1000);
         AcceptButton.click();Thread.sleep(1000);
@@ -77,8 +89,21 @@ public class InvoiceAccept {
         WebDriverWait wait = new WebDriverWait(page, Duration.ofSeconds(5));
         WebElement panel1 = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//th[contains(text(),'Approver')]")));
         ((JavascriptExecutor) page).executeScript("arguments[0].scrollIntoView(true);", panel1);
+        return POTrn;
+    }
+    public void ApproverID() throws InterruptedException {
         String ApproverUserId = ApproversId.getText();Thread.sleep(1000);
         LogOut.UserLogOut(page);
-        return ApproverUserId;
+        LogIn logIn = new LogIn(page);
+        logIn.UserLogin(ApproverUserId, Pass);Thread.sleep(1000);
+        InvoiceModule.click();Thread.sleep(3000);
+        List<WebElement> rows1 = InvoiceListPage;Thread.sleep(1000);
+        for (WebElement row : rows1) {
+            if (row.getText().contains(POTrn)) {
+                WebElement btnLink = InvoiceTrn;
+                btnLink.click();Thread.sleep(3000);
+                break;
+            }
+        }
     }
 }

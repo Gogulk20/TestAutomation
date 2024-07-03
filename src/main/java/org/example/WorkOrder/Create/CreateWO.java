@@ -1,8 +1,6 @@
 package org.example.WorkOrder.Create;
 
 import org.example.LogOut.LogOut;
-import org.example.WorkOrder.TrackerStatus.VendorTrackerStatus;
-import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;

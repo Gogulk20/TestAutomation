@@ -4,14 +4,16 @@ import org.example.Login.LogIn;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
+import static org.example.Variables.YKMain.*;
+
 public class PORSendForApproval {
     WebDriver page;
+    String PMId;
     public PORSendForApproval(WebDriver page){
         this.page=page;
         PageFactory.initElements(page,this);
@@ -38,8 +40,17 @@ public class PORSendForApproval {
     WebElement SubmitButton;
     @FindBy(id = "approvalPanel")
     WebElement ApprovalList;
+    @FindBy(xpath = "//span[contains(text(),'" + Title + "')]")
+    WebElement TrnTitle;
+    @FindBy(xpath = "//span[contains(text(),'Purchase Order Requests')]")
+    WebElement PORModule;
+
 
     public void SendForApproval (String PreOrDict, String Pass) throws InterruptedException {
+        LogIn logIn = new LogIn(page);
+        logIn.UserLogin(BuyerId, Pass);Thread.sleep(1000);
+        PORModule.click();Thread.sleep(3000);
+        TrnTitle.click();Thread.sleep(3000);
         SendForApprovalButton.click();Thread.sleep(2000);
         WebDriverWait wait = new WebDriverWait(page,Duration.ofSeconds(5));
         try {
@@ -86,20 +97,19 @@ public class PORSendForApproval {
         }
         catch (NoSuchElementException e) {
         }
+
+    }
+    public void PMIDLogin() throws InterruptedException {
+        LogIn logIn = new LogIn(page);Thread.sleep(1000);
+        logIn.UserLogin(BuyerId,Pass);
+        PORModule.click();Thread.sleep(3000);
+        TrnTitle.click();Thread.sleep(3000);
         JavascriptExecutor js = (JavascriptExecutor) page;
         js.executeScript("window.scrollBy(0, 3600)"); Thread.sleep(1000);
         WebElement approvalPanel = ApprovalList;
         approvalPanel.findElements(By.tagName("tr"));
-        String PMId = approvalPanel.findElement(By.xpath("//div[1]/div[3]/div[2]/div[1]/div[4]/div[1]/div[1]/div[2]/div[1]/div[1]/table/tbody/tr[1]/td[3]")).getText();
+        PMId = approvalPanel.findElement(By.xpath("//div[1]/div[3]/div[2]/div[1]/div[4]/div[1]/div[1]/div[2]/div[1]/div[1]/table/tbody/tr[1]/td[3]")).getText();
         LogOut.UserLogOut(page); Thread.sleep(1000);
-        LogIn logIn = new LogIn(page);
         logIn.UserLogin(PMId,Pass);Thread.sleep(3000);
-
     }
-
-    private boolean wait(ExpectedCondition<WebElement> webElementExpectedCondition) {
-        return false;
     }
-
-
-}

@@ -14,7 +14,6 @@ import java.time.Duration;
 public class LogIn extends YKMain {
     WebDriver page;
     public LogIn(WebDriver page){
-        super(page);
         this.page=page;
         PageFactory.initElements(page,this);
     }
@@ -30,10 +29,10 @@ public class LogIn extends YKMain {
     @FindBy(id = "glbBtnChangeVendor")
     WebElement ContinueButton;
 
-    public void UserLogin(String email, String password) {
-        UserEmail.sendKeys(email);
-        UserPassword.sendKeys(password);
-        Submit.click();
+    public void UserLogin(String email, String password) throws InterruptedException {
+        UserEmail.sendKeys(email);Thread.sleep(1000);
+        UserPassword.sendKeys(password);Thread.sleep(1000);
+        Submit.click();Thread.sleep(1000);
     }
     public void goTo(){
         page.get("https://yea-test.cormsquare.com/Identity/Account/Login");
@@ -51,5 +50,11 @@ public class LogIn extends YKMain {
             ContinueButton.click();Thread.sleep(3000);
         } catch (NoSuchElementException e){
         }
+
+    }
+    public void ApprovalUserLogin(String UserId, String Pass) {
+        UserEmail.sendKeys(UserId);
+        UserPassword.sendKeys(Pass);
+        Submit.click();
     }
 }

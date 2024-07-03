@@ -1,15 +1,12 @@
 package org.example.Variables;
-import org.openqa.selenium.WebDriver;
 
 public class YKMain {
-    WebDriver page;
-    public YKMain(WebDriver page){
-        this.page=page;
-    }
+//
 //                ChromeOptions options = new ChromeOptions();
 //                System.setProperty("webdriver.chrome.driver", "C:\\Chrome Driver\\chromedriver-win64 (1)\\chromedriver-win64\\chromedriver.exe");
 //                options.addArguments("--remote-allow-origins=*");
 //                WebDriver page = new ChromeDriver(options);
+
         public static final String Title = "GHB Company PVT LMT";
         public static String Project = "E033132400";
         public static String ReqId = "requester@cormsquare.com";
@@ -50,5 +47,5 @@ public class YKMain {
         public static String Volume = "35";
         public static String DNQuantity = "55";
         public static String LMId = "logisticsmanager@cormsquare.com";
-        public static String INVNumber = "INV00007";
-    }
+        public static String INVNumber = "INV000013";
+}

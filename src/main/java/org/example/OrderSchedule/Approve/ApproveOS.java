@@ -18,16 +18,17 @@ public class ApproveOS {
     }
     @FindBy(xpath = "//span[contains(text(),'Purchase Orders')]")
     WebElement PurchaseOrder;
+    @FindBy(xpath = "//span[contains(text(),'" + Title + "')]")
+    WebElement TRNTitle;
     @FindBy(id = "BtnToApproveOS")
     WebElement ViewOrderScheduleButton;
     @FindBy(id = "btnApprove")
     WebElement ApproveButton;
     @FindBy(css = ".bootbox-accept")
     WebElement YesOption;
-    @FindBy(xpath = "//span[contains(text(),'" + Title + "')]")
-    WebElement TRNTitle;
 
-    public void BuyerApproveOS(String BuyerId, String Pass, String Title) throws InterruptedException {
+
+    public void BuyerApproveOS(String BuyerId, String Pass) throws InterruptedException {
         LogIn logIn = new LogIn(page);
         logIn.UserLogin(BuyerId,Pass);Thread.sleep(1000);
         PurchaseOrder.click();Thread.sleep(1000);
