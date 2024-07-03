@@ -3,16 +3,14 @@ package org.example.WorkOrder.TrackerStatus;
 
 import org.example.LogOut.LogOut;
 import org.example.Login.LogIn;
-import org.example.WorkOrder.OkForInvoice.OkForInvoice;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.time.Duration;
 import java.util.List;
 import java.util.stream.Collectors;
+
+import static org.example.Variables.YKMain.*;
 
 public class VendorTrackerStatus {
     WebDriver page;
@@ -20,6 +18,10 @@ public class VendorTrackerStatus {
         this.page=page;
         PageFactory.initElements(page,this);
     }
+    @FindBy(xpath = "//span[contains(text(),'Purchase Orders')]")
+    WebElement PurchaseOrder;
+    @FindBy(id = "referenceId")
+    WebElement PORefId;
     @FindBy(xpath = "//span[contains(text(),'Work Orders')]")
     WebElement WorkOrder;
     @FindBy(css = "#listContainer tr td")
@@ -38,19 +40,28 @@ public class VendorTrackerStatus {
     WebElement SubmitButton;
     @FindBy(css = ".bootbox-accept")
     WebElement YesButton;
+    @FindBy(xpath = "//span[contains(text(),'" + Title + "')]")
+    WebElement TRNTitle;
 
-    public void VendorUpdateTS(String VendorId, String Pass, String POTrn) throws  InterruptedException{
+    public void VendorUpdateTS() throws  InterruptedException {
         LogIn logIn = new LogIn(page);
-        logIn.VendorLogin(VendorId,Pass);
-        WorkOrder.click();Thread.sleep(1000);
+        logIn.VendorLogin(VendorId, Pass);
+        PurchaseOrder.click();Thread.sleep(1000);
+        TRNTitle.click();Thread.sleep(3000);
+        String POTrn = PORefId.getText();
+        WorkOrder.click();
+        Thread.sleep(1000);
         List<WebElement> rows = WoListapage;
         for (WebElement row : rows) {
             if (row.getText().contains(POTrn)) {
                 WebElement btnLink = TRNLink;
-                btnLink.click();Thread.sleep(3000);
+                btnLink.click();
+                Thread.sleep(3000);
                 break;
             }
         }
+    }
+    public void VendorTrackerStatus() throws InterruptedException {
         JavascriptExecutor js = (JavascriptExecutor) page;
         js.executeScript("window.scrollBy(0,1750)");Thread.sleep(1000);
         StatusField.click();Thread.sleep(1000);

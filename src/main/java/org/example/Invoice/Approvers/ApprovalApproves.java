@@ -30,18 +30,7 @@ public class ApprovalApproves {
     @FindBy(css = ".bootbox-accept")
     WebElement YesButton;
 
-    public void InvoiceApprover(String ApproverUserId, String Pass, String POTrn) throws InterruptedException {
-        LogIn logIn = new LogIn(page);
-        logIn.UserLogin(ApproverUserId, Pass);Thread.sleep(1000);
-        InvoiceModule.click();Thread.sleep(3000);
-        List<WebElement> rows1 = InvoiceListPage;Thread.sleep(1000);
-        for (WebElement row : rows1) {
-            if (row.getText().contains(POTrn)) {
-                WebElement btnLink = InvoiceTrn;
-                btnLink.click();Thread.sleep(3000);
-                break;
-            }
-        }
+    public void InvoiceApprover() throws InterruptedException {
         WebDriverWait wait1 = new WebDriverWait(page, Duration.ofSeconds(5));
         WebElement panel = wait1.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//th[contains(text(),'Approver')]")));
         ((JavascriptExecutor) page).executeScript("arguments[0].scrollIntoView(true);", panel);

@@ -8,7 +8,7 @@ import org.openqa.selenium.support.PageFactory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import static org.example.Variables.YKMain.Title;
+import static org.example.Variables.YKMain.*;
 
 public class CreateDN {
     private static final Logger log = LoggerFactory.getLogger(CreateDN.class);
@@ -55,9 +55,7 @@ public class CreateDN {
     WebElement TRNTitle;
 
 
-    public void VendorCreateDN(String VendorId, String Pass, String SourceCountry,
-                               String DestinationCountry, String GrossWeight, String NetWeight,
-                               String Volume, String DNQuantity) throws InterruptedException {
+    public void VendorCreateDN() throws InterruptedException {
         LogIn logIn = new LogIn(page);
         logIn.VendorLogin(VendorId,Pass);
         PurchaseOrder.click();Thread.sleep(1000);

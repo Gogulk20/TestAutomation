@@ -1,6 +1,7 @@
 package org.example.POR.CreatePOR;
 
 import org.example.Login.LogIn;
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -28,12 +29,13 @@ public class CatalogPOR {
     @FindBy(xpath = "//button[contains(text(), 'Yes')]")
     WebElement YesButton;
     @FindBy(xpath = "//span[contains(text(),'" + Title + "')]")
-    WebElement TrnTitle;
+    WebElement PRTitle;
+
 
     public void CreatePOR (String BuyerId, String Pass, String PORNotes) throws InterruptedException {
         LogIn logIn = new LogIn(page);
         logIn.UserLogin(BuyerId,Pass);Thread.sleep(1000);
-        TrnTitle.click();Thread.sleep(3000);
+        PRTitle.click();Thread.sleep(2000);
         CreatePORButton.click();Thread.sleep(1000);
         JavascriptExecutor js = (JavascriptExecutor) page;
         js.executeScript("window.scrollBy(0, 1750)");Thread.sleep(1000);

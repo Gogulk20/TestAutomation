@@ -1,15 +1,16 @@
 package org.example.DispatchNotes.Assign;
 
-import org.example.Inspection.Assign;
+import org.example.LogOut.LogOut;
 import org.example.Login.LogIn;
-import org.example.WorkOrder.Create.CreateWO;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import java.util.List;
+
+import static org.example.Variables.YKMain.*;
+import static org.example.Variables.YKMain.Pass;
 
 public class DNAssign  {
     WebDriver page;
@@ -35,20 +36,34 @@ public class DNAssign  {
     WebElement LMUserId;
     @FindBy(id = "saveAssine")
     WebElement SubmitButton;
+    @FindBy(xpath = "//span[contains(text(),'" + Title + "')]")
+    WebElement TRNTitle1;
+    @FindBy(xpath = "//span[contains(text(),'Purchase Orders')]")
+    WebElement PurchaseOrder;
+    @FindBy(id = "referenceId")
+    WebElement PONumber;
 
 
-    public void LMAssignDN(String LMId,String Pass,String POTrn) throws InterruptedException {
+    public String GetPOTrnNum() throws InterruptedException {
         LogIn logIn = new LogIn(page);
+        logIn.UserLogin(BuyerId,Pass);Thread.sleep(1000);
+        PurchaseOrder.click();Thread.sleep(1000);
+        TRNTitle1.click();Thread.sleep(3000);
+        String POTRNNum = PONumber.getText();
+        LogOut.UserLogOut(page);
         logIn.UserLogin(LMId,Pass);Thread.sleep(1000);
-        DispatchNote.click();Thread.sleep(3000);
+        DispatchNote.click();Thread.sleep(2000);
         List<WebElement> rows = DiscpatchNoteList;
         for (WebElement row : rows) {
-            if (row.getText().contains(POTrn)) {
+            if (row.getText().contains(POTRNNum)) {
                 WebElement btnLink = TRNLink;
-                btnLink.click();Thread.sleep(3000);
+                btnLink.click();Thread.sleep(1000);
                 break;
             }
         }
+        return POTRNNum;
+    }
+    public void LMAssignDN() throws InterruptedException {
         AssignDropdownButton.click();Thread.sleep(1000);
         AssignButton.click();Thread.sleep(1000);
         UserField.click();Thread.sleep(1000);

@@ -82,7 +82,6 @@ public class PMApprovalAssign {
                         UserId.sendKeys(PRGroupB);Thread.sleep(1000);
                         User.click();Thread.sleep(1000);
                     }
-
                     if (GroupC.isDisplayed() && !GroupD.isDisplayed()) {
                         DepartmentManager.click();Thread.sleep(1000);
                         UserId.sendKeys(PRGroupC);Thread.sleep(1000);
@@ -155,9 +154,5 @@ try {
     }
 }catch (NoSuchElementException element) {
 }
-    }
-
-    private boolean wait(ExpectedCondition<WebElement> webElementExpectedCondition) {
-        return false;
     }
 }
