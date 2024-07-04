@@ -8,6 +8,8 @@ import org.openqa.selenium.support.PageFactory;
 
 import java.util.List;
 
+import static org.example.Variables.YKMain.ReqId;
+
 public class Assign {
     WebDriver page;
     public Assign(WebDriver page){
@@ -31,7 +33,7 @@ public class Assign {
     @FindBy(id = "saveInspector")
     WebElement SaveInspector;
 
-    public void RequesterAssignIns(String ReqId, String Pass) throws InterruptedException {
+    public void RequesterAssignIns() throws InterruptedException {
         AssignInspectorButton.click();Thread.sleep(1000);
         AssignInspectorField.click();Thread.sleep(1000);
         InspectorID.sendKeys(ReqId);Thread.sleep(1000);

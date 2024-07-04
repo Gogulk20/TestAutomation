@@ -14,7 +14,7 @@
         </classes>
     </test>
     <test name="YEA Non Catalog Send For Approval Test">
-        <classes>
+         <classes>
             <class name="com.PurchaseRequisition.SendForApproval.SendForApprovalTest">
             </class>
         </classes>
@@ -351,25 +351,25 @@
     </test>
     <test name="YEA Non Catalog Create Dispatch Notes Test">
         <classes>
-            <class name="com.DispatchNotes.CreateDN.CreateDNTest">
+            <class name="com.CreateDN.CreateDNTest">
             </class>
         </classes>
     </test>
 <!--    <test name="YEA Non Catalog LM return DN Test">-->
 <!--        <classes>-->
-<!--            <class name="com.DispatchNotes.ReturnDN.DNReturnPageTest">-->
+<!--            <class name="com.ReturnDN.DNReturnPageTest">-->
 <!--            </class>-->
 <!--        </classes>-->
 <!--    </test>-->
 <!--    <test name="YEA Non Catalog Vendor Edit DN Test">-->
 <!--        <classes>-->
-<!--            <class name="com.DispatchNotes.EditDN.EditDNTest">-->
+<!--            <class name="com.EditDN.EditDNTest">-->
 <!--            </class>-->
 <!--        </classes>-->
 <!--    </test>-->
     <test name="YEA Non Catalog Assign LM in Work Order Test">
         <classes>
-            <class name="com.DispatchNotes.AssignDN.AssignWOTest">
+            <class name="com.AssignDN.AssignWOTest">
             </class>
         </classes>
     </test>

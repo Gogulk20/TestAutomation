@@ -244,13 +244,13 @@
     </test>
 <!--    <test name="YEA Catalog LM return DN Test">-->
 <!--        <classes>-->
-<!--            <class name="com.DispatchNotes.ReturnDN.DNReturnPageTest">-->
+<!--            <class name="com.ReturnDN.DNReturnPageTest">-->
 <!--            </class>-->
 <!--        </classes>-->
 <!--    </test>-->
 <!--    <test name="YEA Catalog Vendor Edit DN Test">-->
 <!--        <classes>-->
-<!--            <class name="com.DispatchNotes.EditDN.EditDNTest">-->
+<!--            <class name="com.EditDN.EditDNTest">-->
 <!--            </class>-->
 <!--        </classes>-->
 <!--    </test>-->

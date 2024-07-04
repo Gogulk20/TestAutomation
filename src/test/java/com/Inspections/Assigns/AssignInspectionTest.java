@@ -11,6 +11,6 @@ public class AssignInspectionTest extends BaseTest {
         SendForInspection sendForInspection = new SendForInspection(page);
         sendForInspection.GetPOTrnID();
         Assign assign = new Assign(page);
-        assign.RequesterAssignIns(ReqId,Pass);
+        assign.RequesterAssignIns();
     }
 }
