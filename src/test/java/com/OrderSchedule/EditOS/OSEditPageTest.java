@@ -1,7 +1,6 @@
 package com.OrderSchedule.EditOS;
 
 import com.testComponents.BaseTest;
-import org.example.Inspections.SendForInspection;
 import org.example.OrderSchedule.EditPage.OSEditPage;
 import org.testng.annotations.Test;
 

@@ -7,7 +7,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 
 import java.io.FileInputStream;
@@ -37,7 +39,7 @@ public class BaseTest extends YKMain{
         page.manage().window().maximize();Thread.sleep(1000);
         return page;
     }
-@BeforeMethod
+@BeforeClass
     public LogIn lanchApplication() throws IOException, InterruptedException {
         page = InitializeBrowser();
         logIn = new LogIn(page);
@@ -45,7 +47,7 @@ public class BaseTest extends YKMain{
         return logIn;
     }
 
-@AfterMethod
+@AfterClass
 public void closeApplicaton() throws InterruptedException {
         page.close();Thread.sleep(2000);
 }

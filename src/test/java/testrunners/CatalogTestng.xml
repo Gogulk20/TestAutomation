@@ -120,13 +120,13 @@
         </classes>
     </test>
 
-    <!--    <test name="YEA Non Catalog Suspend POR Test">-->
+    <!--    <test name="YEA Catalog Suspend POR Test">-->
     <!--        <classes>-->
     <!--            <class name="com.PurchaseOrderRequest.SuspendPOR.NonCatalogSuspendPORTest">-->
     <!--            </class>-->
     <!--        </classes>-->
     <!--    </test>-->
-    <!--    <test name="YEA Non Catalog POR Edit after Suspend POR Test">-->
+    <!--    <test name="YEA Catalog POR Edit after Suspend POR Test">-->
     <!--        <classes>-->
     <!--            <class name="com.PurchaseOrderRequest.EditPOR.POREditPageTest">-->
     <!--            </class>-->
@@ -139,19 +139,19 @@
             </class>
         </classes>
     </test>
-<!--    <test name="YEA Non Catalog POR Approval Reject Test">-->
+<!--    <test name="YEA Catalog POR Approval Reject Test">-->
 <!--        <classes>-->
 <!--            <class name="com.PurchaseOrderRequest.ApprovalReject.ApprovalRejectPORTest">-->
 <!--            </class>-->
 <!--        </classes>-->
 <!--    </test>-->
-<!--    <test name="YEA Non Catalog POR Edit after Approval Reject Test">-->
+<!--    <test name="YEA Catalog POR Edit after Approval Reject Test">-->
 <!--        <classes>-->
 <!--            <class name="com.PurchaseOrderRequest.EditPOR.POREditPageTest">-->
 <!--            </class>-->
 <!--        </classes>-->
 <!--    </test>-->
-<!--    <test name="YEA Non Catalog POR RE-Send For Approval Test">-->
+<!--    <test name="YEA Catalog POR RE-Send For Approval Test">-->
 <!--        <classes>-->
 <!--            <class name="com.PurchaseOrderRequest.PORSendForApproval.SendForApprovalTest">-->
 <!--            </class>-->
@@ -181,13 +181,13 @@
             </class>
         </classes>
     </test>
-<!--    <test name="YEA Non Catalog Reject OS Test">-->
+<!--    <test name="YEA Catalog Reject OS Test">-->
 <!--        <classes>-->
 <!--            <class name="com.OrderSchedule.RejectOS.RejectOSTest">-->
 <!--            </class>-->
 <!--        </classes>-->
 <!--    </test>-->
-<!--    <test name="YEA Non Catalog Edit OS Test">-->
+<!--    <test name="YEA Catalog Edit OS Test">-->
 <!--        <classes>-->
 <!--            <class name="com.OrderSchedule.EditOS.OSEditPageTest">-->
 <!--            </class>-->
@@ -211,19 +211,19 @@
             </class>
         </classes>
     </test>
-<!--    <test name="YEA Non Catalog Fail Inspection Test">-->
+<!--    <test name="YEA Catalog Fail Inspection Test">-->
 <!--        <classes>-->
 <!--            <class name="com.Inspections.InspectionFail.InspectionFailTest">-->
 <!--            </class>-->
 <!--        </classes>-->
 <!--    </test>-->
-<!--    <test name="YEA Non Catalog Send for Inspection After Fails Test">-->
+<!--    <test name="YEA Catalog Send for Inspection After Fails Test">-->
 <!--        <classes>-->
 <!--            <class name="com.Inspections.SendForInspections.SendForInspectionTest">-->
 <!--            </class>-->
 <!--        </classes>-->
 <!--    </test>-->
-<!--    <test name="YEA Non Catalog Assign Inspection After Fails Test">-->
+<!--    <test name="YEA Catalog Assign Inspection After Fails Test">-->
 <!--        <classes>-->
 <!--            <class name="com.Inspections.Assigns.AssignInspectionTest">-->
 <!--            </class>-->
@@ -242,15 +242,15 @@
             </class>
         </classes>
     </test>
-<!--    <test name="YEA Non Catalog LM return DN Test">-->
+<!--    <test name="YEA Catalog LM return DN Test">-->
 <!--        <classes>-->
-<!--            <class name="com.DispatchNotes.ReturnDN.DNReturnPageTest">-->
+<!--            <class name="com.ReturnDN.DNReturnPageTest">-->
 <!--            </class>-->
 <!--        </classes>-->
 <!--    </test>-->
-<!--    <test name="YEA Non Catalog Vendor Edit DN Test">-->
+<!--    <test name="YEA Catalog Vendor Edit DN Test">-->
 <!--        <classes>-->
-<!--            <class name="com.DispatchNotes.EditDN.EditDNTest">-->
+<!--            <class name="com.EditDN.EditDNTest">-->
 <!--            </class>-->
 <!--        </classes>-->
 <!--    </test>-->
@@ -284,13 +284,13 @@
             </class>
         </classes>
     </test>
-<!--    <test name="YEA Non Catalog Invoice Return Documents Test">-->
+<!--    <test name="YEA Catalog Invoice Return Documents Test">-->
 <!--        <classes>-->
 <!--            <class name="com.Invoice.Return.ReturnInvoiceTest">-->
 <!--            </class>-->
 <!--        </classes>-->
 <!--    </test>-->
-<!--    <test name="YEA Non Catalog Vendor Edit Invoice Test">-->
+<!--    <test name="YEA Catalog Vendor Edit Invoice Test">-->
 <!--        <classes>-->
 <!--            <class name="com.Invoice.Edit.InvoiceEditTest">-->
 <!--            </class>-->
