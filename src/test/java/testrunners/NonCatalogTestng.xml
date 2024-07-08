@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="YEA Selenium Suite">
+    <listeners>
+        <listener class-name="com.testComponents.Listeners"/>
+    </listeners>
     <test name="YEA Login Page Test">
         <classes>
             <class name="com.testComponents.BaseTest">
@@ -351,7 +354,7 @@
     </test>
     <test name="YEA Non Catalog Create Dispatch Notes Test">
         <classes>
-            <class name="com.CreateDN.CreateDNTest">
+            <class name="com.DispatchNotes.CreateDN.CreateDNTest">
             </class>
         </classes>
     </test>
@@ -369,7 +372,7 @@
 <!--    </test>-->
     <test name="YEA Non Catalog Assign LM in Work Order Test">
         <classes>
-            <class name="com.AssignDN.AssignWOTest">
+            <class name="com.DispatchNotes.AssignDN.AssignWOTest">
             </class>
         </classes>
     </test>
