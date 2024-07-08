@@ -1,8 +1,11 @@
 package com.testComponents;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import org.apache.commons.io.FileUtils;
 import org.example.Login.LogIn;
 import org.example.Variables.YKMain;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
@@ -12,6 +15,7 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Properties;
@@ -39,6 +43,14 @@ public class BaseTest extends YKMain{
         page.manage().window().maximize();Thread.sleep(1000);
         return page;
     }
+    public String getScreenShot(String testCaseName,WebDriver page) throws IOException {
+        TakesScreenshot ts = (TakesScreenshot) page;
+        File source = ts.getScreenshotAs(OutputType.FILE);
+        File file = new File(System.getProperty("user.dir")+"//reports//"+ testCaseName+".png");
+        FileUtils.copyFile(source,file);
+        return System.getProperty("user.dir")+"//reports//"+ testCaseName+".png";
+    }
+
 @BeforeClass
     public LogIn lanchApplication() throws IOException, InterruptedException {
         page = InitializeBrowser();

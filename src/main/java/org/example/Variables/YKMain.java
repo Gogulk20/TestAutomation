@@ -47,5 +47,5 @@ public class YKMain {
         public static String Volume = "35";
         public static String DNQuantity = "55";
         public static String LMId = "logisticsmanager@cormsquare.com";
-        public static String INVNumber = "INV000013";
+        public static String INVNumber = "INV000012";
 }
