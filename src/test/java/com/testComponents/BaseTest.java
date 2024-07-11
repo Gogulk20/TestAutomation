@@ -10,6 +10,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
@@ -29,15 +30,16 @@ public class BaseTest extends YKMain{
         Properties properties = new Properties();
         FileInputStream fileInputStream = new FileInputStream( "C:\\Gogul\\Yokogawa\\src\\main\\java\\org\\example\\Resources\\GlobalData.properties");
         properties.load(fileInputStream);
-        String BrowserName = properties.getProperty("browser");
+        String BrowserName =  System.getProperty("browser")!=null ? System.getProperty("browser") : properties.getProperty("browser");
+//        String BrowserName = properties.getProperty("browser");
         if (BrowserName.equalsIgnoreCase("chrome")) {
             WebDriverManager.chromedriver().setup();
             page = new ChromeDriver();
         } else if (BrowserName.equalsIgnoreCase("firefox")) {
-            System.setProperty("webdriver.gecko.driver", "C:\\Firefox Driver\\geckodriver-v0.34.0-win-aarch64.exe");
+            System.setProperty("webdriver.gecko.driver", "C:\\Firefox Driver\\geckodriver.exe");
             page = new FirefoxDriver();
         } else if (BrowserName.equalsIgnoreCase("edge")) {
-            System.setProperty("webdriver.edge.driver", "C:\\Edge Driver\\edgedriver_win64\\Driver_Notes.exe");
+            System.setProperty("webdriver.edge.driver", "C:\\Edge Driver\\edgedriver_win64\\msedgedriver.exe");
             page = new EdgeDriver();
         }
         page.manage().window().maximize();Thread.sleep(1000);

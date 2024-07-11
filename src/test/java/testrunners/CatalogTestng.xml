@@ -3,7 +3,10 @@
 <suite name="YEA Selenium Suite">
     <listeners>
         <listener class-name="com.testComponents.Listeners"/>
+<!--        <listener class-name="org.testng.reporters.EmailableReporter"/>-->
+<!--        <listener class-name="org.testng.reporters.FailedReporter"/>-->
     </listeners>
+
     <test name="YEA Login Page Test">
         <classes>
             <class name="com.testComponents.BaseTest">
