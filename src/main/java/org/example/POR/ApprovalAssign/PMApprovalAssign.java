@@ -13,7 +13,7 @@ import java.time.Duration;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import static org.example.Variables.YKMain.Title;
+import static org.example.Variables.YKMain.*;
 
 public class PMApprovalAssign {
     WebDriver page;
@@ -59,7 +59,7 @@ public class PMApprovalAssign {
     WebElement ApproveButtonVisibile;
 
 
-    public void PORApproval(String PRGroupB, String PRGroupC, String PRGroupD, String Pass) throws InterruptedException {
+    public void PORApproval() throws InterruptedException {
         MyApproval.click();Thread.sleep(2000);
         TrnTitle.click();Thread.sleep(2000);
         WebDriverWait wait = new WebDriverWait(page, Duration.ofSeconds(5));

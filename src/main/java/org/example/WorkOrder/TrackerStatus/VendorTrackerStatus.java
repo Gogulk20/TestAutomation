@@ -26,8 +26,6 @@ public class VendorTrackerStatus {
     WebElement WorkOrder;
     @FindBy(css = "#listContainer tr td")
     List<WebElement> WoListapage;
-    @FindBy(css = ".btn-link")
-    WebElement TRNLink;
     @FindBy(id = "select2-statusId-container")
     WebElement StatusField;
     @FindBy(xpath = "//span[1]/span[1]/span[2]/ul[1]/li")
@@ -51,15 +49,10 @@ public class VendorTrackerStatus {
         String POTrn = PORefId.getText();
         WorkOrder.click();
         Thread.sleep(1000);
-        List<WebElement> rows = WoListapage;
-        for (WebElement row : rows) {
-            if (row.getText().contains(POTrn)) {
-                WebElement btnLink = TRNLink;
-                btnLink.click();
-                Thread.sleep(3000);
-                break;
-            }
-        }
+        List<WebElement> rows = WoListapage;Thread.sleep(1000);
+        List<WebElement> ListPage = rows.stream().filter(g->g.getText().contains(POTrn)).map(g->getTrnNumber(g)).collect(Collectors.toList());Thread.sleep(1000);
+        ListPage.forEach(g->g.click());Thread.sleep(3000);
+
     }
     public void VendorTrackerStatus() throws InterruptedException {
         JavascriptExecutor js = (JavascriptExecutor) page;
@@ -80,5 +73,9 @@ public class VendorTrackerStatus {
             js1.executeScript("window.scrollBy(0,750)");Thread.sleep(1000);
         }
         LogOut.UserLogOut(page);
+    }
+    private static WebElement getTrnNumber(WebElement g) {
+        WebElement TRNLink = g.findElement(By.xpath("ancestor::tr[1]/td[2]/div[1]/a[1]/span[1]"));
+        return TRNLink;
     }
 }

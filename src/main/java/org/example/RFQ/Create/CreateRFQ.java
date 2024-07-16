@@ -7,7 +7,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import static org.example.Variables.YKMain.Title;
+import static org.example.Variables.YKMain.*;
 
 public class CreateRFQ {
     WebDriver page;
@@ -29,7 +29,7 @@ public class CreateRFQ {
     @FindBy(xpath = "//span[contains(text(),'" + Title + "')]")
     WebElement TrnTitle;
 
-    public void CreateRFQ(String BuyerId, String Pass, String RFQNotes) throws InterruptedException {
+    public void CreateRFQ() throws InterruptedException {
         LogIn logIn= new LogIn(page);
         logIn.UserLogin(BuyerId,Pass);Thread.sleep(1000);
         ClickRequisition.click();Thread.sleep(2000);

@@ -11,6 +11,6 @@ public class AssignApprovalsTest extends BaseTest {
         PORSendForApproval porSendForApproval = new PORSendForApproval(page);
         porSendForApproval.PMIDLogin();
         PMApprovalAssign pmApprovalAssign = new PMApprovalAssign(page);
-        pmApprovalAssign.PORApproval(PRGroupB,PRGroupC,PRGroupD,Pass);
+        pmApprovalAssign.PORApproval();
     }
 }

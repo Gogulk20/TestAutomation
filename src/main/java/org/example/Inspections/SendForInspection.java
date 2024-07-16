@@ -7,6 +7,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 import static org.example.Variables.YKMain.*;
 
@@ -28,11 +29,7 @@ public class SendForInspection {
     @FindBy(xpath = "//span[contains(text(),'Order Schedules')]")
     WebElement OrderSchedule;
     @FindBy(css = "#listContainer tr td")
-    List<WebElement> OrderScheduleListPage;
-    @FindBy(css = "#listContainer tr td")
     List<WebElement> OSListPage;
-    @FindBy(css = ".btn-link")
-    WebElement TRNLink;
     @FindBy(id = "btnSendForInspection")
     WebElement SendForInspectionButton;
     @FindBy(css = ".bootbox-accept")
@@ -51,14 +48,16 @@ public class SendForInspection {
 
     public String VendorSendForInspection() throws InterruptedException {
         OrderSchedule.click();Thread.sleep(2000);
-        List<WebElement> rows = OSListPage;
-        for (WebElement row : rows) {
-            if (row.getText().contains(POTrn)) {
-                WebElement btnLink = TRNLink;
-                btnLink.click();Thread.sleep(2000);
-                break;
-            }
-        }
+//        for (WebElement row : rows) {
+//            if (row.getText().contains(POTrn)) {
+//                WebElement btnLink = TRNLink;
+//                btnLink.click();Thread.sleep(2000);
+//                break;
+//            }
+//        }
+        List<WebElement> rows = OSListPage;Thread.sleep(1000);
+        List<WebElement> ListPage = rows.stream().filter(g->g.getText().contains(POTrn)).map(g->getTrnNumber(g)).collect(Collectors.toList());Thread.sleep(1000);
+        ListPage.forEach(g->g.click());Thread.sleep(3000);
         SendForInspectionButton.click();Thread.sleep(1000);
         YesOption.click();Thread.sleep(2000);
         LogOut.UserLogOut(page);
@@ -73,13 +72,12 @@ public class SendForInspection {
         LogOut.UserLogOut(page);
         logIn.UserLogin(ReqId,Pass);Thread.sleep(1000);
         OrderSchedule.click();Thread.sleep(2000);
-        List<WebElement> rows = OrderScheduleListPage;
-        for (WebElement row : rows) {
-            if (row.getText().contains(POTRNNum)) {
-                WebElement btnLink = TRNLink;
-                btnLink.click();Thread.sleep(1000);
-                break;
-            }
-        }
+        List<WebElement> rows = OSListPage;Thread.sleep(1000);
+        List<WebElement> ListPage = rows.stream().filter(g->g.getText().contains(POTrn)).map(g->getTrnNumber(g)).collect(Collectors.toList());Thread.sleep(1000);
+        ListPage.forEach(g->g.click());Thread.sleep(3000);
+    }
+    private static WebElement getTrnNumber(WebElement g) {
+        WebElement TRNLink = g.findElement(By.xpath("ancestor::tr[1]/td[2]/div[1]/a[1]/span[1]"));
+        return TRNLink;
     }
 }

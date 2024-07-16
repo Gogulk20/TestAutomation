@@ -1,11 +1,14 @@
 package org.example.PR.Create;
 
 import org.example.LogOut.LogOut;
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+
+import static org.example.Variables.YKMain.*;
 
 public class CatalogPR {
     WebDriver page;
@@ -115,35 +118,35 @@ public class CatalogPR {
        CreateButton.click(); Thread.sleep(1000);
        CatalogPRPage.click();Thread.sleep(1000);
     }
-    public void CatalogTitle(String Title) throws InterruptedException {
+    public void CatalogTitle() throws InterruptedException {
         TrnTitle.sendKeys(Title);Thread.sleep(1000);
     }
-    public void CatalogProject(String Project) throws InterruptedException {
+    public void CatalogProject() throws InterruptedException {
         ProjectFieldClick.click();Thread.sleep(1000);
         ProjectCode.sendKeys(Project);Thread.sleep(1000);
         SelectProject.click();Thread.sleep(1000);
     }
-    public void CatalogWbs(String Wbs) throws InterruptedException {
+    public void CatalogWbs() throws InterruptedException {
         WbsFieldClick.click();Thread.sleep(1000);
         WbsCode.sendKeys(Wbs);Thread.sleep(1000);
         SelectWbs.click();Thread.sleep(1000);
     }
-    public  void CatalogVendor(String Vendor) throws InterruptedException {
+    public  void CatalogVendor() throws InterruptedException {
         VendorFieldClick.click();Thread.sleep(1000);
         VendorName.sendKeys(Vendor);Thread.sleep(1000);
         SelectVendor.click();Thread.sleep(1000);
     }
-    public void CatalogRc(String Rc) throws InterruptedException {
+    public void CatalogRc() throws InterruptedException {
         RCFieldClick.click();Thread.sleep(1000);
         RCCode.sendKeys(Rc);Thread.sleep(1000);
         SelectRC.click();Thread.sleep(1000);
     }
-    public void CatalogShippingAdds(String Address) throws InterruptedException {
+    public void CatalogShippingAdds() throws InterruptedException {
         ShippingAddressFieldClick.click();Thread.sleep(1000);
 //        page.findElement(By.cssSelector("input[class='select2-search__field']")).sendKeys(Address);Thread.sleep(1000);
         ShippingAddressSelect.click();Thread.sleep(1000);
     }
-    public void CatalogShippingMode(String Mode) throws InterruptedException {
+    public void CatalogShippingMode() throws InterruptedException {
         ShippingModeFieldClick.click();Thread.sleep(1000);
         ShippingModeName.sendKeys(Mode);Thread.sleep(1000);
         SelectShippingMode.click();Thread.sleep(1000);
@@ -161,17 +164,17 @@ public class CatalogPR {
         ExpectedDeliveryPopup.click();Thread.sleep(1000);
         SelectMaxDate.click();Thread.sleep(1000);
     }
-    public void CatalogBuyerManager(String Bm) throws InterruptedException {
+    public void CatalogBuyerManager() throws InterruptedException {
         BMFieldClick.click();Thread.sleep(1000);
         BMName.sendKeys(Bm);Thread.sleep(1000);
         SelectBM.click();Thread.sleep(1000);
     }
-    public void CatalogProjectManager(String Pm) throws InterruptedException {
+    public void CatalogProjectManager() throws InterruptedException {
         PMFieldClick.click();Thread.sleep(1000);
         PMName.sendKeys(Pm);Thread.sleep(1000);
         SelectPM.click();Thread.sleep(1000);
     }
-    public void CatalogOrderIntake(String OI) throws InterruptedException {
+    public void CatalogOrderIntake() throws InterruptedException {
         OIPrice.sendKeys(OI);Thread.sleep(1000);
 //        page.findElement(By.id("orderInTakeId")).sendKeys(OI);Thread.sleep(1000);
     }
@@ -180,7 +183,7 @@ public class CatalogPR {
         JavascriptExecutor js = (JavascriptExecutor) page;
         js.executeScript("window.scrollBy(0, 600)");
     }
-    public void CatalogItems(String ItemsQty) throws InterruptedException {
+    public void CatalogItems() throws InterruptedException {
         //Items Category
         ClickAddLineButton.click();Thread.sleep(2000);
 //        ClickCategoryField.click();Thread.sleep(1000);
@@ -192,10 +195,10 @@ public class CatalogPR {
         ItemQuantity.sendKeys(ItemsQty);Thread.sleep(1000);
         SaveItem.click();Thread.sleep(1000);
     }
-    public void CatalogNotes(String PRNotes) throws InterruptedException {
+    public void CatalogNotes() throws InterruptedException {
         Notes.sendKeys(PRNotes);Thread.sleep(1000);
     }
-    public void CatalogAttachments(String File1, String File2) throws InterruptedException {
+    public void CatalogAttachments() throws InterruptedException {
         ClickAttachmentsButton.click();Thread.sleep(1000);
         WebElement file = (AttachmentField1);
         file.sendKeys(File1);Thread.sleep(2000);

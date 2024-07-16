@@ -8,6 +8,6 @@ public class QuotationTest extends BaseTest {
     @Test
     public void QuotationMenthod() throws InterruptedException {
         Quotation quotation = new Quotation(page);
-        quotation.QuotationSubmission(VendorId,Pass,InctLocation,QuoRefNum,Gst,File1,File2);
+        quotation.QuotationSubmission();
     }
 }

@@ -8,6 +8,6 @@ public class CatalogCreatePORTest extends BaseTest {
     @Test
     public void CatalogCreatePORMethod() throws InterruptedException {
         CatalogPOR catalogPOR = new CatalogPOR(page);
-        catalogPOR.CreatePOR(BuyerId,Pass,PORNotes);
+        catalogPOR.CreatePOR();
     }
 }

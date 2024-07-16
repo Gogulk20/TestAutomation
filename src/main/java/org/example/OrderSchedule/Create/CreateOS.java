@@ -6,7 +6,7 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import static org.example.Variables.YKMain.Title;
+import static org.example.Variables.YKMain.*;
 
 public class CreateOS {
     WebDriver page;
@@ -31,7 +31,7 @@ public class CreateOS {
     @FindBy(xpath = "//span[contains(text(),'" + Title + "')]")
     WebElement TRNTitle;
 
-    public void VendorCreateOS(String VendorId, String Pass) throws InterruptedException {
+    public void VendorCreateOS() throws InterruptedException {
         LogIn logIn = new LogIn(page);
         logIn.VendorLogin(VendorId,Pass);Thread.sleep(1000);
         PurchaseOrder.click();Thread.sleep(1000);

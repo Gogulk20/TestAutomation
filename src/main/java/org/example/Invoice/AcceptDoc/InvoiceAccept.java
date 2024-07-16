@@ -58,8 +58,8 @@ public class InvoiceAccept {
 
     public String AcceptInvoice() throws InterruptedException {
         LogIn logIn = new LogIn(page);
-        logIn.UserLogin(BuyerId, Pass);
-        PurchaseOrder.click();Thread.sleep(1000);
+        logIn.UserLogin(BuyerId, Pass);Thread.sleep(1000);
+        PurchaseOrder.click();Thread.sleep(2000);
         TRNTitle.click();Thread.sleep(3000);
         POTrn = PORefId.getText();
         InvoiceModule.click();Thread.sleep(3000);

@@ -10,22 +10,22 @@ public class CatalogPRTest extends BaseTest {
         logIn.UserLogin(ReqId,Pass);
         CatalogPR catalogPR = new CatalogPR(page);
         catalogPR.CatalogCreateButton();
-        catalogPR.CatalogTitle(Title);
-        catalogPR.CatalogProject(Project);
-        catalogPR.CatalogWbs(Wbs);
-        catalogPR.CatalogVendor(Vendor);
-        catalogPR.CatalogRc(Rc);
-        catalogPR.CatalogShippingAdds(Address);
-        catalogPR.CatalogShippingMode(Mode);
+        catalogPR.CatalogTitle();
+        catalogPR.CatalogProject();
+        catalogPR.CatalogWbs();
+        catalogPR.CatalogVendor();
+        catalogPR.CatalogRc();
+        catalogPR.CatalogShippingAdds();
+        catalogPR.CatalogShippingMode();
         catalogPR.CatalogExpectedPOIssue();
         catalogPR.CatalogExpectedDelivery();
-        catalogPR.CatalogBuyerManager(Bm);
-        catalogPR.CatalogProjectManager(Pm);
-        catalogPR.CatalogOrderIntake(OI);
+        catalogPR.CatalogBuyerManager();
+        catalogPR.CatalogProjectManager();
+        catalogPR.CatalogOrderIntake();
         catalogPR.CatalogInspection();
-        catalogPR.CatalogItems(ItemsQty);
-        catalogPR.CatalogNotes(PRNotes);
-        catalogPR.CatalogAttachments(File1, File2);
+        catalogPR.CatalogItems();
+        catalogPR.CatalogNotes();
+        catalogPR.CatalogAttachments();
         catalogPR.CatalogCreaete();
     }
 }

@@ -8,6 +8,6 @@ public class SendForApprovalTest extends BaseTest {
     @Test
     public void SendForApprovalMethod() throws InterruptedException {
         PORSendForApproval porSendForApproval = new PORSendForApproval(page);
-        porSendForApproval.SendForApproval(PreOrDict,Pass);
+        porSendForApproval.SendForApproval();
     }
 }

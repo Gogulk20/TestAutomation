@@ -8,7 +8,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import static org.example.Variables.YKMain.Title;
+import static org.example.Variables.YKMain.*;
 
 public class TechnicalEvaluation {
     WebDriver page;
@@ -45,7 +45,7 @@ public class TechnicalEvaluation {
 
 
 
-    public void RequesterCreateTE(String ReqId, String Pass) throws InterruptedException {
+    public void RequesterCreateTE() throws InterruptedException {
         LogIn logIn = new LogIn(page);
         logIn.UserLogin(ReqId,Pass);
         RFQpage.click();Thread.sleep(2000);

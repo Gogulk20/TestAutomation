@@ -11,6 +11,6 @@ public class CreateWorkOrderTest extends BaseTest {
         DNAssign dnAssign = new DNAssign(page);
         dnAssign.GetPOTrnNum();
         CreateWO createWO = new CreateWO(page);
-        createWO.LMCreateWO(VendorName);
+        createWO.LMCreateWO();
     }
 }

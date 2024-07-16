@@ -8,6 +8,8 @@ import org.openqa.selenium.support.PageFactory;
 
 import java.util.List;
 
+import static org.example.Variables.YKMain.*;
+
 public class NonCatalogPR {
     WebDriver page;
     public NonCatalogPR(WebDriver page){
@@ -26,7 +28,7 @@ public class NonCatalogPR {
     @FindBy(id = "title")
     WebElement TrnTitle;
 
-    public void NonCatalogTitle(String Title) throws InterruptedException {
+    public void NonCatalogTitle() throws InterruptedException {
         TrnTitle.sendKeys(Title);Thread.sleep(1000);
     }
     @FindBy(id = "select2-projectId-container")
@@ -36,7 +38,7 @@ public class NonCatalogPR {
     @FindBy(css = ".select2-results__option--highlighted")
     WebElement SelectProject;
 
-    public void NonCatalogProject(String Project) throws InterruptedException {
+    public void NonCatalogProject() throws InterruptedException {
         ProjectFieldClick.click();Thread.sleep(1000);
         ProjectName.sendKeys(Project);Thread.sleep(1000);
         SelectProject.click();Thread.sleep(2000);
@@ -47,7 +49,7 @@ public class NonCatalogPR {
     WebElement WbsCode;
     @FindBy(css = ".select2-results__option")
     WebElement SelectWbs;
-    public void NonCatalogWbs(String Wbs) throws InterruptedException {
+    public void NonCatalogWbs() throws InterruptedException {
         WbsFieldClick.click();Thread.sleep(1000);
         WbsCode.sendKeys(Wbs);Thread.sleep(1000);
         SelectWbs.click();Thread.sleep(1000);
@@ -59,9 +61,9 @@ public class NonCatalogPR {
     @FindBy(css = ".select2-results__option")
     WebElement SelectIncoterm;
 
-    public void NonCatalogIncoterm(String Incterm) throws InterruptedException {
+    public void NonCatalogIncoterm() throws InterruptedException {
         IncotermFieldClick.click();Thread.sleep(1000);
-        IncotermName.sendKeys(Incterm);Thread.sleep(1000);
+        IncotermName.sendKeys(Incoterm);Thread.sleep(1000);
         SelectIncoterm.click();Thread.sleep(1000);
     }
     @FindBy(id = "select2-shippingaddressId-container")
@@ -69,7 +71,7 @@ public class NonCatalogPR {
     @FindBy(css = ".select2-results__option")
     WebElement SelectShippingAddress;
 
-    public  void NonCatalogShippingAdds(String Address) throws InterruptedException {
+    public  void NonCatalogShippingAdds() throws InterruptedException {
         ShippingAddressFieldClick.click();Thread.sleep(1000);
 //        page.findElement(By.cssSelector("input[class='select2-search__field']")).sendKeys(Address);Thread.sleep(1000);
         SelectShippingAddress.click();Thread.sleep(1000);
@@ -82,7 +84,7 @@ public class NonCatalogPR {
     WebElement SelectShippingMode;
 
 
-    public void NonCatalogShippingMode(String Mode) throws InterruptedException {
+    public void NonCatalogShippingMode() throws InterruptedException {
         ShippingModeFieldClick.click();Thread.sleep(1000);
         ShippingModeName.sendKeys(Mode);Thread.sleep(1000);
         SelectShippingMode.click();Thread.sleep(1000);
@@ -126,7 +128,7 @@ public class NonCatalogPR {
     @FindBy(css = ".select2-results__option")
     WebElement SelectBM;
 
-    public void NonCatalogBuyerManager(String Bm) throws InterruptedException {
+    public void NonCatalogBuyerManager() throws InterruptedException {
         BMFieldClick.click();Thread.sleep(1000);
         BMName.sendKeys(Bm);Thread.sleep(1000);
         SelectBM.click();Thread.sleep(1000);
@@ -138,7 +140,7 @@ public class NonCatalogPR {
     @FindBy(css = ".select2-results__option")
     WebElement SelectPM;
 
-    public void NonCatalogProjectManager(String Pm) throws InterruptedException {
+    public void NonCatalogProjectManager() throws InterruptedException {
         PMFieldClick.click();Thread.sleep(1000);
         PMName.sendKeys(Pm);Thread.sleep(1000);
         SelectPM.click();Thread.sleep(1000);
@@ -154,7 +156,7 @@ public class NonCatalogPR {
     @FindBy(id = "orderintakeid")
     WebElement OIPrice;
 
-    public void NonCatalogOrderIntake(String OI) throws InterruptedException {
+    public void NonCatalogOrderIntake() throws InterruptedException {
         JavascriptExecutor js = (JavascriptExecutor) page;
         js.executeScript("window.scrollBy(0, 500)", "");Thread.sleep(1000);
         OIPrice.sendKeys(OI);Thread.sleep(1000);
@@ -164,7 +166,7 @@ public class NonCatalogPR {
     @FindBy(id = "targetpriceid")
     WebElement TPPrice;
 
-    public void NonCatalogTargetPrice(String TP) throws InterruptedException {
+    public void NonCatalogTargetPrice() throws InterruptedException {
         TPPrice.sendKeys(TP);Thread.sleep(1000);
     }
     @FindBy(id = "select2-warrantyrequirementsid-container")
@@ -181,7 +183,7 @@ public class NonCatalogPR {
     @FindBy(css = ".select2-results__option")
     WebElement SelectPriceValidity;
 
-    public void NonCatalogPriceValidity(WebDriver page) throws InterruptedException {
+    public void NonCatalogPriceValidity() throws InterruptedException {
         PriceValidityFieldClick.click();Thread.sleep(1000);
         SelectPriceValidity.click();Thread.sleep(1000);
         JavascriptExecutor js = (JavascriptExecutor) page;
@@ -202,7 +204,7 @@ public class NonCatalogPR {
     @FindBy(id = "saveRequisitionItem")
     WebElement SaveItemButtom;
 
-    public void NonCatalogItems(String ItemsQty) throws InterruptedException {
+    public void NonCatalogItems() throws InterruptedException {
         //Items Category
         AddLineItemButton.click();Thread.sleep(2000);
 //        ItemCategoryFieldClcik.click();Thread.sleep(1000);
@@ -217,7 +219,7 @@ public class NonCatalogPR {
     @FindBy(id = "notes")
     WebElement Notes;
 
-    public void NonCatalogNotes(String PRNotes) throws InterruptedException {
+    public void NonCatalogNotes() throws InterruptedException {
         Notes.sendKeys(PRNotes);Thread.sleep(1000);
     }
     @FindBy(id = "attachDocs")
@@ -233,7 +235,7 @@ public class NonCatalogPR {
     @FindBy(id = "submitAttachmentsId")
     WebElement SubmitAttachments;
 
-    public void NonCatalogAttachments(String File1, String File2) throws InterruptedException {
+    public void NonCatalogAttachments() throws InterruptedException {
         ClickAttachmentButton.click();Thread.sleep(1000);
         WebElement file = (AttachField1);
         file.sendKeys(File1);Thread.sleep(2000);

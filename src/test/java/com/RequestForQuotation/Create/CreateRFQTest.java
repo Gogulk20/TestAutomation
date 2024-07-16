@@ -8,7 +8,7 @@ public class CreateRFQTest extends BaseTest {
     @Test
     public void CreateRFQMethod() throws InterruptedException {
         CreateRFQ createRFQ = new CreateRFQ(page);
-        createRFQ.CreateRFQ(BuyerId, Pass, RFQNotes);
+        createRFQ.CreateRFQ();
     }
 
 }

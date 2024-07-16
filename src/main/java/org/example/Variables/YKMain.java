@@ -7,7 +7,7 @@ public class YKMain {
 //                options.addArguments("--remote-allow-origins=*");
 //                WebDriver page = new ChromeDriver(options);
 
-        public static final String Title = "GHB Company PVT LMT";
+        public static final String Title = "GAB Company PVT LMT";
         public static String Project = "E033132400";
         public static String ReqId = "requester@cormsquare.com";
         public static String Pass = "Admin@123";
@@ -47,5 +47,5 @@ public class YKMain {
         public static String Volume = "35";
         public static String DNQuantity = "55";
         public static String LMId = "logisticsmanager@cormsquare.com";
-        public static String INVNumber = "INV000015";
+        public static String INVNumber = "INV000016";
 }

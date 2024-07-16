@@ -8,6 +8,6 @@ public class ApproveOSTest extends BaseTest {
     @Test
     public void ApproveOSMethod() throws InterruptedException {
         ApproveOS approveOS = new ApproveOS(page);
-        approveOS.BuyerApproveOS(BuyerId,Pass);
+        approveOS.BuyerApproveOS();
     }
 }

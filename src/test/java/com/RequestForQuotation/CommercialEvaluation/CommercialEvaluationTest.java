@@ -8,6 +8,6 @@ public class CommercialEvaluationTest extends BaseTest {
     @Test
     public void CommercialEvaluationMethod() throws InterruptedException {
         CommercialEvaluation commercialEvaluation = new CommercialEvaluation(page);
-        commercialEvaluation.BuyerCreateCE(BuyerId,Pass,Title);
+        commercialEvaluation.BuyerCreateCE();
     }
 }

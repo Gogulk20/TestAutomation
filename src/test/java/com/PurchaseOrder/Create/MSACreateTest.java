@@ -8,6 +8,6 @@ public class MSACreateTest extends BaseTest {
     @Test
     public void MSACreatePOMethod() throws InterruptedException {
         POCreate poCreate = new POCreate(page);
-        poCreate.BuyerCreatePO(AdminId,Pass,Title);
+        poCreate.BuyerCreatePO();
     }
 }

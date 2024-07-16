@@ -46,7 +46,7 @@ public class PORSendForApproval {
     WebElement PORModule;
 
 
-    public void SendForApproval (String PreOrDict, String Pass) throws InterruptedException {
+    public void SendForApproval () throws InterruptedException {
         LogIn logIn = new LogIn(page);
         logIn.UserLogin(BuyerId, Pass);Thread.sleep(1000);
         PORModule.click();Thread.sleep(3000);

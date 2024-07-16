@@ -7,7 +7,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import static org.example.Variables.YKMain.Title;
+import static org.example.Variables.YKMain.*;
 
 public class CommercialEvaluation {
     WebDriver page;
@@ -30,7 +30,7 @@ public class CommercialEvaluation {
     @FindBy(xpath = "//span[contains(text(),'" + Title + "')]")
     WebElement TrnTitle;
 
-    public void BuyerCreateCE(String BuyerId, String Pass, String Title) throws InterruptedException {
+    public void BuyerCreateCE() throws InterruptedException {
         LogIn logIn = new LogIn(page);
         logIn.UserLogin(BuyerId,Pass);
         RFQPage.click();Thread.sleep(2000);

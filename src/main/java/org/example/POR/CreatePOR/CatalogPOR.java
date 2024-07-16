@@ -8,7 +8,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import static org.example.Variables.YKMain.Title;
+import static org.example.Variables.YKMain.*;
 
 public class CatalogPOR {
     WebDriver page;
@@ -32,7 +32,7 @@ public class CatalogPOR {
     WebElement PRTitle;
 
 
-    public void CreatePOR (String BuyerId, String Pass, String PORNotes) throws InterruptedException {
+    public void CreatePOR () throws InterruptedException {
         LogIn logIn = new LogIn(page);
         logIn.UserLogin(BuyerId,Pass);Thread.sleep(1000);
         PRTitle.click();Thread.sleep(2000);

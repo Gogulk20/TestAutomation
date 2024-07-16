@@ -8,6 +8,6 @@ public class TechnicalEvaluationTest extends BaseTest {
     @Test
     public void TechnicalEvaluationMethod() throws InterruptedException {
         TechnicalEvaluation technicalEvaluation = new TechnicalEvaluation(page);
-        technicalEvaluation.RequesterCreateTE(ReqId,Pass);
+        technicalEvaluation.RequesterCreateTE();
     }
 }

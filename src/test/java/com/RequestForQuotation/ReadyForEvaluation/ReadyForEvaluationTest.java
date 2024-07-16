@@ -8,6 +8,6 @@ public class ReadyForEvaluationTest extends BaseTest {
     @Test
     public void ReadyForEvaluationMethod() throws InterruptedException {
         ReadyForEvaluation readyForEvaluation = new ReadyForEvaluation(page);
-        readyForEvaluation.BuyerSentRFE(BuyerId,Pass);
+        readyForEvaluation.BuyerSentRFE();
     }
 }

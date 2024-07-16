@@ -7,6 +7,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import static org.example.Variables.YKMain.VendorName;
+
 public class CreateWO {
     WebDriver page;
     public CreateWO(WebDriver page){
@@ -40,7 +42,7 @@ public class CreateWO {
     @FindBy(css = ".bootbox-accept")
     WebElement YesButton;
 
-    public void LMCreateWO(String VendorName) throws InterruptedException {
+    public void LMCreateWO() throws InterruptedException {
         AssignButton.click();Thread.sleep(1000);
         CreatWOButton.click();Thread.sleep(3000);
         FFDropdownField.click();Thread.sleep(2000);

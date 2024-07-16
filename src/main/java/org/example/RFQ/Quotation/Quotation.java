@@ -9,7 +9,7 @@ import org.openqa.selenium.support.PageFactory;
 
 import java.util.List;
 
-import static org.example.Variables.YKMain.Title;
+import static org.example.Variables.YKMain.*;
 
 public class Quotation {
     WebDriver page;
@@ -65,7 +65,7 @@ public class Quotation {
     WebElement TrnTitle;
 
 
-    public void QuotationSubmission(String VendorId, String Pass,String InctLocation, String QuoRefNum, String Gst, String File1, String File2) throws InterruptedException {
+    public void QuotationSubmission() throws InterruptedException {
         LogIn logIn = new LogIn(page);
         logIn.VendorLogin(VendorId,Pass);
         TrnTitle.click();Thread.sleep(2000);

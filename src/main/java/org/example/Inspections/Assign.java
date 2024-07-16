@@ -16,12 +16,6 @@ public class Assign {
         this.page=page;
         PageFactory.initElements(page,this);
     }
-    @FindBy(xpath = "//span[contains(text(),'Order Schedules')]")
-    WebElement OrderSchedule;
-    @FindBy(css = "#listContainer tr td")
-    List<WebElement> OrderScheduleListPage;
-    @FindBy(css = ".btn-link")
-    WebElement TRNLink;
     @FindBy(id = "btnAssignInspector")
     WebElement AssignInspectorButton;
     @FindBy(id = "select2-InspectionId-container")

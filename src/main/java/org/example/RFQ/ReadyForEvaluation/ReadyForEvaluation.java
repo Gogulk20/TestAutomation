@@ -8,7 +8,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import static org.example.Variables.YKMain.Title;
+import static org.example.Variables.YKMain.*;
 
 public class ReadyForEvaluation {
     WebDriver page;
@@ -26,7 +26,7 @@ public class ReadyForEvaluation {
     WebElement OptionYes;
 
 
-    public void BuyerSentRFE(String BuyerId, String Pass) throws InterruptedException {
+    public void BuyerSentRFE() throws InterruptedException {
         LogIn logIn = new LogIn(page);
         logIn.UserLogin(BuyerId,Pass);
         RFQPage.click();Thread.sleep(2000);

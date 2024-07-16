@@ -8,6 +8,6 @@ public class CreateOSTest extends BaseTest {
     @Test
     public void CreateOSMethod() throws InterruptedException {
         CreateOS createOS = new CreateOS(page);
-        createOS.VendorCreateOS(VendorId,Pass);
+        createOS.VendorCreateOS();
     }
 }

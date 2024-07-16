@@ -8,7 +8,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import static org.example.Variables.YKMain.Title;
+import static org.example.Variables.YKMain.*;
 
 public class ApproveOS {
     WebDriver page;
@@ -28,7 +28,7 @@ public class ApproveOS {
     WebElement YesOption;
 
 
-    public void BuyerApproveOS(String BuyerId, String Pass) throws InterruptedException {
+    public void BuyerApproveOS() throws InterruptedException {
         LogIn logIn = new LogIn(page);
         logIn.UserLogin(BuyerId,Pass);Thread.sleep(1000);
         PurchaseOrder.click();Thread.sleep(1000);

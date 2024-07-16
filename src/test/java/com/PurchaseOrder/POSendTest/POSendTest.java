@@ -8,6 +8,6 @@ public class POSendTest extends BaseTest {
     @Test
     public void POSendMethod() throws InterruptedException {
         POSent poSent = new POSent(page);
-        poSent.POSentToVendor(BuyerId, Pass, Title);
+        poSent.POSentToVendor();
     }
 }
