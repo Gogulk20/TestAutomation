@@ -46,17 +46,15 @@ public class BaseTest extends YKMain{
             System.setProperty("webdriver.edge.driver", "C:\\Edge Driver\\edgedriver_win64\\msedgedriver.exe");
             capabilities.setBrowserName("edge");
         }
-
-        // Connect to the Selenium Grid
         try {
             page = new RemoteWebDriver(new URI("http://192.168.0.133:4444").toURL(), capabilities);
         } catch (URISyntaxException e) {
             e.printStackTrace();
         }
-
         page.manage().window().maximize();
         return page;
     }
+
     public String getScreenShot(String testCaseName,WebDriver page) throws IOException {
         TakesScreenshot ts = (TakesScreenshot) page;
         File source = ts.getScreenshotAs(OutputType.FILE);
