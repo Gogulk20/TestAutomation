@@ -11,6 +11,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
@@ -19,6 +20,8 @@ import org.testng.annotations.BeforeMethod;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.util.Properties;
 
 public class BaseTest extends YKMain{
@@ -32,17 +35,26 @@ public class BaseTest extends YKMain{
         properties.load(fileInputStream);
         String BrowserName =  System.getProperty("browser")!=null ? System.getProperty("browser") : properties.getProperty("browser");
 //        String BrowserName = properties.getProperty("browser");
+        DesiredCapabilities capabilities = new DesiredCapabilities();
         if (BrowserName.equalsIgnoreCase("chrome")) {
             WebDriverManager.chromedriver().setup();
-            page = new ChromeDriver();
+            capabilities.setBrowserName("chrome");
         } else if (BrowserName.equalsIgnoreCase("firefox")) {
             System.setProperty("webdriver.gecko.driver", "C:\\Firefox Driver\\geckodriver.exe");
-            page = new FirefoxDriver();
+            capabilities.setBrowserName("firefox");
         } else if (BrowserName.equalsIgnoreCase("edge")) {
             System.setProperty("webdriver.edge.driver", "C:\\Edge Driver\\edgedriver_win64\\msedgedriver.exe");
-            page = new EdgeDriver();
+            capabilities.setBrowserName("edge");
         }
-        page.manage().window().maximize();Thread.sleep(1000);
+
+        // Connect to the Selenium Grid
+        try {
+            page = new RemoteWebDriver(new URI("http://192.168.0.133:4444").toURL(), capabilities);
+        } catch (URISyntaxException e) {
+            e.printStackTrace();
+        }
+
+        page.manage().window().maximize();
         return page;
     }
     public String getScreenShot(String testCaseName,WebDriver page) throws IOException {
@@ -54,7 +66,7 @@ public class BaseTest extends YKMain{
     }
 
 @BeforeClass
-    public LogIn lanchApplication() throws IOException, InterruptedException {
+    public LogIn lanchApplication() throws IOException, InterruptedException, URISyntaxException {
         page = InitializeBrowser();
         logIn = new LogIn(page);
         logIn.goTo();Thread.sleep(1000);
