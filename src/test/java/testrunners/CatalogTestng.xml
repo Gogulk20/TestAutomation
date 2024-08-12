@@ -1,11 +1,32 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="YEA Selenium Suite">
+<suite name="YEA Selenium Suite" parallel= "tests" thread-count="1">
     <listeners>
         <listener class-name="com.testComponents.Listeners"/>
 <!--        <listener class-name="org.testng.reporters.EmailableReporter"/>-->
 <!--        <listener class-name="org.testng.reporters.FailedReporter"/>-->
     </listeners>
+
+    <test name="Chrome Test">
+        <parameter name="browser" value="chrome"/>
+        <classes>
+            <class name="com.testComponents.BaseTest"/>
+        </classes>
+    </test>
+
+    <test name="Firefox Test">
+        <parameter name="browser" value="firefox"/>
+        <classes>
+            <class name="com.testComponents.BaseTest"/>
+        </classes>
+    </test>
+
+    <test name="Edge Test">
+        <parameter name="browser" value="edge"/>
+        <classes>
+            <class name="com.testComponents.BaseTest"/>
+        </classes>
+    </test>
 
     <test name="YEA Login Page Test">
         <classes>

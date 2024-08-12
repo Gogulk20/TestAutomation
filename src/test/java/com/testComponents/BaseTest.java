@@ -20,8 +20,10 @@ import org.testng.annotations.BeforeMethod;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.net.MalformedURLException;
 import java.net.URI;
 import java.net.URISyntaxException;
+import java.net.URL;
 import java.util.Properties;
 
 public class BaseTest extends YKMain{
@@ -29,7 +31,7 @@ public class BaseTest extends YKMain{
     public WebDriver page;
     public LogIn logIn;
 
-    public WebDriver InitializeBrowser() throws IOException, InterruptedException {
+    public WebDriver InitializeBrowser() throws IOException {
         Properties properties = new Properties();
         FileInputStream fileInputStream = new FileInputStream( "C:\\Gogul\\Yokogawa\\src\\main\\java\\org\\example\\Resources\\GlobalData.properties");
         properties.load(fileInputStream);
@@ -40,10 +42,10 @@ public class BaseTest extends YKMain{
             WebDriverManager.chromedriver().setup();
             capabilities.setBrowserName("chrome");
         } else if (BrowserName.equalsIgnoreCase("firefox")) {
-            System.setProperty("webdriver.gecko.driver", "C:\\Firefox Driver\\geckodriver.exe");
+            WebDriverManager.firefoxdriver().setup();
             capabilities.setBrowserName("firefox");
         } else if (BrowserName.equalsIgnoreCase("edge")) {
-            System.setProperty("webdriver.edge.driver", "C:\\Edge Driver\\edgedriver_win64\\msedgedriver.exe");
+            WebDriverManager.edgedriver().setup();
             capabilities.setBrowserName("edge");
         }
         try {
@@ -51,6 +53,7 @@ public class BaseTest extends YKMain{
         } catch (URISyntaxException e) {
             e.printStackTrace();
         }
+
         page.manage().window().maximize();
         return page;
     }
@@ -60,11 +63,11 @@ public class BaseTest extends YKMain{
         File source = ts.getScreenshotAs(OutputType.FILE);
         File file = new File(System.getProperty("user.dir")+"//reports//"+ testCaseName+".png");
         FileUtils.copyFile(source,file);
-        return System.getProperty("user.dir")+"//reports//"+ testCaseName+".png";
+        return System.getProperty("user.dir")+"//reports//"+ testCaseName +".png";
     }
 
 @BeforeClass
-    public LogIn lanchApplication() throws IOException, InterruptedException, URISyntaxException {
+    public LogIn lanchApplication() throws IOException, InterruptedException {
         page = InitializeBrowser();
         logIn = new LogIn(page);
         logIn.goTo();Thread.sleep(1000);
