@@ -82,7 +82,8 @@ public class InvoiceAccept {
         js.executeScript("window.scrollBy(0, 600)");Thread.sleep(1000);
         VerifyButton.click();Thread.sleep(1000);
         SubmitButton.click();Thread.sleep(1000);
-        js.executeScript("window.scrollBy(0, -2500)");Thread.sleep(1000);
+        js.executeScript("windo" +
+                "w.scrollBy(0, -2500)");Thread.sleep(1000);
         SendForApprovalButton.click();Thread.sleep(1000);
         YesButton.click();Thread.sleep(1000);
         js.executeScript("window.scrollBy(0, 2000)");Thread.sleep(1000);
